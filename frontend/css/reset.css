@@ -1050,20 +1050,20 @@ object {
 .modal-dialog .quickview-slider-active img{
 	display:inline-block;
 }
-.modal-dialog {
+/* .modal-dialog {
   margin: 12% auto 8%;
   max-width: 1358px;
   width: 1358px;
-}
+} */
 
-@media only screen and (min-width: 1366px) and (max-width: 1600px) {
+/* @media only screen and (min-width: 1366px) and (max-width: 1600px) {
   .modal-dialog {
     width: 1145px;
     max-width: 1145px;
   }
-}
+} */
 
-@media only screen and (min-width: 1200px) and (max-width: 1365px) {
+/* @media only screen and (min-width: 1200px) and (max-width: 1365px) {
   .modal-dialog {
     width: 1145px;
     max-width: 1145px;
@@ -1103,9 +1103,9 @@ object {
 	top: 10px;
 	position: absolute;
 	z-index: 9999;
-}
+} */
 
-@media only screen and (max-width: 767px) {
+/* @media only screen and (max-width: 767px) {
   .modal-dialog .modal-content .modal-header {
     right: 0px;
     top: -10px;
@@ -1143,7 +1143,7 @@ object {
   color: #fff;
   border-color:transparent;
   background:#F7941D;
-}
+} */
 .modal-dialog .modal-content .modal-body {
 	padding: 0px;
 	overflow-y: auto;

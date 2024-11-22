@@ -8,17 +8,41 @@ Version:1.0
 /*=======================================
 [Start Activation Code]
 =========================================
-	02. Sticky Header Js
-	06. Popular Slider Js
+	01. Mobile Menu JS
+	02. Sticky Header JS
+	06. Popular Slider JS
 	13. Extra Scroll JS
 
-	17. Nice Select Js
-	19. Preloader Js
+	16. Scroll to Top JS
+	17. Nice Select JS
+	19. Preloader JS
 
 */
 
 (function ($) {
 	"use strict";
+
+	/*====================================
+			Mobile Menu
+	======================================*/
+	var $offcanvasNav = $("#offcanvas-menu a");
+	$offcanvasNav.on("click", function () {
+		var link = $(this);
+		var closestUl = link.closest("ul");
+		var activeLinks = closestUl.find(".active");
+		var closestLi = link.closest("li");
+		var linkStatus = closestLi.hasClass("active");
+		var count = 0;
+
+		closestUl.find("ul").slideUp(function () {
+			if (++count == closestUl.find("ul").length)
+				activeLinks.removeClass("active");
+		});
+		if (!linkStatus) {
+			closestLi.children("ul").slideDown();
+			closestLi.addClass("active");
+		}
+	});
 
 	/*====================================
 		02. Sticky Header JS
@@ -31,9 +55,9 @@ Version:1.0
 		}
 	});
 
-	/*=======================
-		  Popular Slider JS
-		=========================*/
+	/*====================================
+		06.  Popular Slider JS
+	======================================*/
 	$('.popular-slider').owlCarousel({
 		items: 1,
 		autoplay: true,
@@ -76,6 +100,26 @@ Version:1.0
 	// 	}, 900);
 	// 	e.preventDefault();
 	// });
+
+	/*====================================
+		Scroll To Top JS
+	======================================*/
+	var scrollToTopBtn = '.scrollToTop'
+	$(window).on("scroll", function () {
+		if ($(this).scrollTop() > 400) {
+			$(scrollToTopBtn).addClass('show');
+		} else {
+			$(scrollToTopBtn).removeClass('show');
+		}
+	});
+
+	$(scrollToTopBtn).on('click', function (e) {
+		e.preventDefault();
+		$('html, body').animate({
+			scrollTop: 0
+		}, 600);
+		return false;
+	});
 
 	/*=================================================
 		17. Nice Select Js: Apply nice select library

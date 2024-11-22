@@ -25,6 +25,7 @@ Version:1.0
     10. Shop Services CSS
     11. Shop Newsletter CSS
     12. Foooter CSS
+        + Scroll To Top
 
 
 /*======================================
@@ -225,9 +226,11 @@ Version:1.0
 .header .dbcmobile-nav {
     display: none;
 }
-
+.dbcheader-inner__2 .mobile-toggler-menu {
+    padding-bottom: 10px;
+}
 .dbcheader-inner__2 .offcanvas-toggler {
-    top: 6px;
+    top: 19px;
     text-align: center;
     display: inline-block;
     padding: 0px !important;
@@ -235,7 +238,7 @@ Version:1.0
     height: 40px;
     z-index: 3;
     border-radius: 50%;
-    border: none;
+    border: 2px solid #f7941d;
     position: absolute;
     right: 0;
     background: #fff !important;
@@ -244,6 +247,25 @@ Version:1.0
     display: flex !important;
     flex-direction: column;
     justify-content: center;
+}
+.dbcheader-inner__2 .offcanvas-toggler:hover {
+    background: transparent;
+}
+.dbcheader-inner__2 .offcanvas-toggler:hover .line:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 7px;
+}
+.dbcheader-inner__2 .offcanvas-toggler:hover .line:nth-child(2) {
+    opacity: 0;
+    visibility: hidden;
+}
+.dbcheader-inner__2 .offcanvas-toggler:hover .line:nth-child(3) {
+    -webkit-transform: rotate(-46deg);
+    -ms-transform: rotate(-46deg);
+    transform: rotate(-46deg);
+    bottom: 5px;
 }
 .dbcheader-inner__2 .offcanvas-toggler .line {
     position: relative;
@@ -258,7 +280,7 @@ Version:1.0
     transition: all 0.3s;
 }
 .dbcheader-inner__2 .offcanvas-toggler .line {
-    background: var(--accent-c);
+    background: #202042;
     margin-top: 2px;
     margin-bottom: 2px;
 }
@@ -268,6 +290,154 @@ Version:1.0
 .dbcheader-inner__2 .offcanvas-toggler .line:first-child {
     margin-top: 0px;
 }
+/* offcanvas body */
+.offcanvas-modal.modal.fade .modal-dialog {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+.offcanvas-modal.modal.show .modal-dialog {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+}
+#offcanvas-modal {
+    z-index: 100000;
+}
+.offcanvas-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+}
+.offcanvas-dialog .modal-content {
+    height: 100%;
+    border-radius: 0;
+    border: 0;
+    padding: 0px 35px;
+}
+.offcanvas-logo {
+    width: 175px;
+    position: relative;
+    top: -47px;
+}
+.offcanvas-header{
+    border: none;
+    padding: 40px;
+}
+.offcanvas-header .btn-close {
+	color: #18171A;
+	opacity: 1;
+	position: absolute;
+	right: 12px;
+	top: 45px;
+}
+.offcanvas-header .btn-close:hover {
+    color: var(--secondary-c);
+}
+.offcanvas-menu {
+    position: relative;
+    z-index: 1;
+    overflow-y: scroll;
+}
+.offcanvas-menu::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    background-color: #fff;
+}
+.offcanvas-menu ul ul {
+    display: none;
+}
+
+#offcanvas-menu ul{
+    transition: initial !important;
+}
+.offcanvas-menu > ul > li > ul li {
+	border-bottom: 0px;
+	padding: 0;
+}
+.offcanvas-menu > ul > li > ul li a {
+	padding-left: 15px;
+	font-weight: 400;
+	font-size: 14px;
+	color: #555 !important;
+}
+.offcanvas-menu > ul > li > ul li a:hover{
+    color:var(--secondary-c) !important
+}
+.offcanvas-menu li.active > ul {
+    display: block;
+}
+.offcanvas-menu .sub-menu {
+	padding: 0;
+	margin-top: 8px;
+}
+.offcanvas-menu li {
+	margin-bottom: 12px;
+	position: relative;
+	border-bottom: 1px solid #cccccc9e;
+	padding-bottom: 12px;
+}
+.offcanvas-menu li.active a{
+	color: #393e46;
+}
+.offcanvas-menu li:last-child {
+    margin: 0;
+	border:none;
+	padding:0;
+}
+.offcanvas-menu li a {
+	font-weight: 500;
+	display: block;
+	text-transform: capitalize;
+	color: #393e46;
+	padding: 0px;
+	position: relative;
+	font-size: 16px;
+}
+.offcanvas-menu li a:hover {
+    color: var(--secondary-c);
+}
+.offcanvas-menu li a i {
+    margin-left: 10px;
+}
+.offcanvas-menu .sub-menu {
+    padding: 0;
+}
+.offcanvas-menu li.menu-item-has-children a::after {
+	position: absolute;
+	margin-left: 0 !important;
+	font-size: 15px;
+	font-family: "Font Awesome 6 Free";
+	font-weight: 600;
+	content: "\f105";
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	top: 1px;
+	right: 10px;
+}
+.offcanvas-menu li a::after {
+	position: absolute;
+	right: 0;
+	color: #7E8BA0;
+}
+.offcanvas-menu li.menu-item-has-children .sub-menu li a::after {
+    display: none;
+}
+.offcanvas-menu li.menu-item-has-children.active a::after {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
 @media only screen and (min-width: 0px) and (max-width: 767px) {
     .dbcheader-inner__2 .offcanvas-toggler {
         left: 6px;
@@ -282,7 +452,7 @@ Version:1.0
     .right-bar {
         position: absolute !important;
         right: 15px;
-        top: 15px;
+        top: 26px;
     }
 }
 @media (min-width: 768px) {
@@ -1926,4 +2096,49 @@ header.sticky .dbcall-category h3 {
 .dbcfooter .copyright p a{
 	color:#fff;
 	text-decoration:underline;
+}
+/* Scroll To Top */
+.scrollToTop {
+    right: -10px;
+    z-index: 33;
+    bottom: 50px;
+    position: fixed;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(50px);
+    visibility: hidden;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    transition: all 1s ease;
+    transform: rotate(-90deg) !important;
+    font-size: 14px;
+    font-weight: 600;
+    background: #fff;
+    transition: all 1.5s ease;
+    padding: 4px 15px;
+    color: var(--secondary-c) !important;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 9px 126px rgba(20, 0, 255, 0.06);
+}
+@media only screen and (max-width: 767px) {
+    /* .scrollToTop {
+        right: 0;
+    } */
+}
+.scrollToTop i {
+    font-size: 22px;
+    display: inline-block;
+    color: var(--secondary-c) !important;
+    position: relative;
+    top: 2px;
+    left: 4px;
+    transition: all 0.4s ease;
+    padding-left: 3px;
+}
+.scrollToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0px);
 }
