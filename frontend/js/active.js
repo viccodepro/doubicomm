@@ -12,6 +12,7 @@ Version:1.0
 	02. Sticky Header JS
 	06. Popular Slider JS
 	13. Extra Scroll JS
+	14. Aos Animate JS
 
 	16. Scroll to Top JS
 	17. Nice Select JS
@@ -100,9 +101,21 @@ Version:1.0
 	// 	}, 900);
 	// 	e.preventDefault();
 	// });
-
 	/*====================================
-		Scroll To Top JS
+		14. Aos Animate JS
+	======================================*/
+	AOS.init({
+		duration: 1500,
+		disable: !1,
+		offset: 0,
+		once: false,
+		easing: "ease"
+	});
+
+
+	
+	/*====================================
+		16. Scroll To Top JS
 	======================================*/
 	var scrollToTopBtn = '.scrollToTop'
 	$(window).on("scroll", function () {
