@@ -108,7 +108,7 @@ Version:1.0
 		duration: 1500,
 		disable: !1,
 		offset: 0,
-		once: false,
+		once: !0,
 		easing: "ease"
 	});
 

@@ -1,11 +1,20 @@
 /* =====================================
-Template Name: Eshop
-Author Name: Naimur Rahman
-Author URI: http://www.wpthemesgrid.com/
-Description: Eshop - eCommerce HTML5 Template.
+Template Name: DoubiCommerce(DBC) Template
+Author Name: Doube Victoire
+Author URI: 
+Description: DoubiCommerce(DBC) Default CSS Rules.
 Version:1.0
 ========================================*/
 
+
+/*======================================
+	 Global Variables
+========================================*/
+:root {
+    --primary-c: #5deb50;
+    --secondary-c: #f7941d;
+    --accent-c: #00539C;
+}
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -43,6 +52,10 @@ nav,
 section,
 summary {
 	display: block;
+}
+div,span,a,button,table,tr, th, td, header,footer,ul,ol, li{
+    /* position:relative; */
+    transition: all 0.3s ease;
 }
 audio,
 canvas,
@@ -601,6 +614,13 @@ figure {
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
+}
+p {
+	color: #7e8ba0;
+	margin: 0;
+	line-height: 26px;
+	font-weight: 400;
+	font-size: 16px;
 }
 
 /*--------------------------------------------------------------
@@ -1874,4 +1894,74 @@ object {
   -webkit-transform-origin:bottom left;
   transform-origin:bottom left
  }
+}
+/* Paddings */
+.pd-top-80 {
+    padding-top: 80px;
+}
+.pd-btm-80 {
+    padding-bottom: 80px;
+}
+
+
+.dbcshop-btn {
+	background: var(--secondary-c);
+	color: #fff;
+	font-weight: 500;
+	padding: 0 30px;
+	line-height: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	display: flex;
+	gap: 10px;
+	transition: all 0.5s ease;
+	max-width: fit-content;
+	cursor: pointer;
+	height: 60px;
+	font-size: 14px;
+	z-index: 2;
+	overflow: hidden;
+	text-align: center;
+	line-height: 60px;
+}
+.dbcshop-btn:hover {
+	transition: all 0.5s ease;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+}
+.dbcshop-btn span,
+.dbcshop-btn svg,
+.dbcshop-btn i,
+.dbcshop-btn p,
+.dbcshop-btn span {
+	z-index: 111;
+	position: relative;
+	transition: all 0.5s ease;
+}
+.dbcshop-btn svg {
+	fill: currentColor;
+}
+.dbcshop-btn:before {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  z-index: 1;
+  content: "";
+}
+.dbcshop-btn:hover:before {
+  width: 500px;
+  height: 500px;
+  display: inline-block;
+}
+.dbcshop-btn span {
+	transition: all 0.5s ease;
+}
+.dbcshop-btn:hover{
+  color: var(--primary-c);
 }

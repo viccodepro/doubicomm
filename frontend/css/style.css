@@ -9,7 +9,6 @@ Version:1.0
 /*======================================
 [ CSS Table of contents ]
 ========================================
-    00. Global Variables
     01. DBC Preloader CSS
     02. DBC Header CSS
 	    + Logo
@@ -26,16 +25,8 @@ Version:1.0
     11. Shop Newsletter CSS
     12. Foooter CSS
         + Scroll To Top
+    13. Shop Page CSS
 
-
-/*======================================
-	00. Global Variables
-========================================*/
-:root {
-    --primary-c: #5deb50;
-    --secondary-c: #f7941d;
-    --accent-c: #00539C;
-}
 /*======================================
 	01. DBC Preloader
 ========================================*/
@@ -2173,4 +2164,114 @@ header.sticky .dbcall-category h3 {
     opacity: 1;
     visibility: visible;
     transform: translateX(0px);
+}
+
+/*======================================
+	13. Shop Page CSS
+========================================*/
+.dbcshop-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #eceaff;
+    box-shadow: 0px 9px 126px rgba(20, 0, 255, 0.059);
+    border-radius: 4px;
+    padding: 15px;
+    background: #fff;
+}
+.dbcshop-bar__single {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+.dbcshop-form__form {
+    display: none !important;
+}
+.dbcshop-form__form {
+    position: relative;
+    display: flex;
+    max-width: 535px;
+    width: 535px;
+    justify-content: end;
+    padding: 10px 11px 10px 20px;
+    background: #f4f3fe;
+    border-radius: 8px;
+    align-items: center;
+    height: 72px;
+    gap: 15px;
+}
+.dbcshop-form__form--bar {
+    height: 54px;
+    padding: 5px 10px 5px 10px;
+}
+@media only screen and (max-width: 991px) {
+    .dbcshop-form__form--bar {
+        max-width: 370px;
+        width: 370px;
+    }
+}
+.dbcshop-form__form.dbcshop-form__form--bar input {
+    color: var(--primary-c);
+}
+.dbcshop-form__form.dbcshop-form__form--bar button {
+    min-width: 120px;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 5px;
+}
+.dbcshop-form__form input {
+    font-size: 14px;
+    color: var(--primary-c);
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    background: transparent;
+    height: initial;
+    padding: 0;
+    margin: 0;
+}
+.dbcshop-form__form input::placeholder {
+    color: var(--primary-c) !important;
+    opacity: 1 !important;
+}
+.dbcshop-form__form input::-ms-input-placeholder {
+    color: var(--primary-c) !important;
+    opacity: 1 !important;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .dbcshop-form__form input {
+        max-width: 100%;
+    }
+}
+.dbcshop-showing-results__text {
+    font-size: 18px;
+}
+/* shop Tabs */
+#dbc-tabs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#dbc-tabs.dbc-gl-tabs {
+    min-width: 100px;
+}
+#dbc-tabs.dbc-gl-tabs svg {
+    fill: #111;
+}
+#dbc-tabs.dbc-gl-tabs a.active svg,
+#dbc-tabs.dbc-gl-tabs a.hover svg {
+    fill: #fff;
+}
+#dbc-tabs.dbc-gl-tabs a {
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
 }
