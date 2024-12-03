@@ -2275,3 +2275,185 @@ header.sticky .dbcall-category h3 {
     align-items: center;
     border-radius: 4px;
 }
+/* Shop Product CSS */
+.dbc-product {
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 9px 126px rgba(20, 0, 255, 0.059);
+    border-radius: 8px;
+    padding: 12px;
+}
+.dbc-product.dbc-product__list-style {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.dbc-product.dbc-product__list-style .dbc-product__head {
+    max-width: 370px;
+}
+.dbc-product.dbc-product__list-style .dbc-product__head {
+    max-width: 330px;
+    min-width: 330px;
+}
+.dbc-product.dbc-product__list-style .dbc-product__head img {
+    max-width: 330px;
+    height: 260px;
+}
+.dbc-product__head img{
+    width: 100%;
+    border-radius: 4px;
+}
+.dbc-product__head {
+    overflow: hidden;
+}
+.dbc-product:hover .dbc-product__head img {
+    transform: scale(1.1);
+}
+.dbc-product__hsticky {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    justify-content: space-between;
+}
+.dbc-product__hsticky .price-dec {
+    background: var(--secondary-c);
+    color: #fff;
+    font-size: 13px;
+    padding: 2px 10px;
+    border-radius: 100px;
+    line-height: initial;
+}
+.dbc-product__hsticky .price-dec {
+    position: absolute;
+    right: 15px;
+}
+.dbc-product__body {
+    padding: 20px 8px 8px;
+}
+.dbc-product__topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.dbc-product__topbar {
+    margin-bottom: 10px;
+}
+.dbc-product__price {
+    font-size: 24px;
+    color: var(--primary-c);
+    font-weight: 700;
+}
+.dbc-product__title {
+    margin-bottom: 5px;
+}
+.dbc-product__title a {
+    font-size: 22px;
+    font-weight: 600;
+}
+.dbc-product:hover .dbc-product__title a {
+    color: var(--secondary-c);
+}
+.dbc-product__text {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.dbc-product__text p {
+    font-size: 15px;
+}
+.dbc-product__action-list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 15px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.dbc-product__action-list li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    color: #333;
+}
+.dbc-product.dbc-product__list-style .dbc-product__action-list li a {
+    font-size: 23px !important;
+}
+.dbc-product.dbc-product__list-style .dbc-product__action-list {
+    justify-content: space-between;
+}
+.dbc-product__action-list li i {
+    max-width: 20px;
+}
+.dbc-product .dbc-product__action-list a span {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    background: var(--secondary-c) !important;
+    color: #fff !important;
+    text-align: center;
+    padding: 5px 12px;
+    z-index: 3;
+    -webkit-transition: opacity .6s, margin .3s;
+    -o-transition: opacity .6s, margin .3s;
+    transition: opacity .6s, margin .3s;
+    font-size: 11px;
+    right: 0;
+    line-height: 14px;
+    top: -12px;
+    margin-top: -5px;
+    margin-right: 0;
+    display: inline-block;
+    width: 120px;
+    border-radius: 15px 0 0 15px;
+}
+.dbc-product .dbc-product__action-list a span::after {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: -12px;
+    border: 6px solid var(--secondary-c);
+    border-left: 0px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+}
+.dbc-product .dbc-product__action-list a:hover {
+    color: var(--secondary-c);
+}
+.dbc-product .dbc-product__action-list a:hover span {
+    visibility: visible;
+    opacity: 1;
+    color: #333;
+    background: #fff;
+    margin-top: -12px;
+}
+.dbc-product .dbc-product__action-list li:first-child {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    text-align: left;
+    z-index: 99;
+    -webkit-transition: all 250ms ease-out;
+    -o-transition: all 250ms ease-out;
+    transition: all 250ms ease-out;
+}
+.dbc-product .dbc-product__action-list li:first-child a {
+    display: inline-block;
+    background-color: transparent;
+    color: #333;
+    text-align: left;
+    font-size: 12px !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1;
+}
+.dbc-product .dbc-product__action-list li:first-child a:hover {
+    color: var(--secondary-c);
+}

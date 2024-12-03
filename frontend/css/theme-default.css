@@ -54,7 +54,7 @@ summary {
 	display: block;
 }
 div,span,a,button,table,tr, th, td, header,footer,ul,ol, li{
-    /* position:relative; */
+    position:relative;
     transition: all 0.3s ease;
 }
 audio,
@@ -589,6 +589,15 @@ li > ul,
 li > ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
+}
+.list-none,
+.list-none li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.dbc-border-top {
+	border-top: 1px solid #ECEAFF;
 }
 
 dt {
@@ -1895,12 +1904,15 @@ object {
   transform-origin:bottom left
  }
 }
-/* Paddings */
+/* Paddings and margins */
 .pd-top-80 {
     padding-top: 80px;
 }
 .pd-btm-80 {
     padding-bottom: 80px;
+}
+.mg-top-30 {
+	margin-top: 30px !important;
 }
 
 
