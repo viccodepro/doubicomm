@@ -14,6 +14,10 @@ Version:1.0
     --primary-c: #5deb50;
     --secondary-c: #f7941d;
     --accent-c: #00539C;
+	--body-c: #fdfdfd;
+	/* --body-c: #f6f7fb;fdfdfd */
+	--section-hot-c: #fff;
+	--footer-c: #222222;
 }
 /*--------------------------------------------------------------
 # Normalize
@@ -35,6 +39,7 @@ html,body {
 }
 body {
 	margin: 0;
+	background: var(--body-c) !important;
 }
 img{
 	max-width:100%;
@@ -53,9 +58,16 @@ section,
 summary {
 	display: block;
 }
+.section {
+	margin-top: 25px;
+	background: var(--section-hot-c) !important;
+}
 div,span,a,button,table,tr, th, td, header,footer,ul,ol, li{
     position:relative;
     transition: all 0.3s ease;
+}
+.dbcfooter>.section {
+	background: var(--footer-c) !important;
 }
 audio,
 canvas,
@@ -1908,11 +1920,26 @@ object {
 .pd-top-80 {
     padding-top: 80px;
 }
+.pd-top-15 {
+	padding-top: 15px;
+}
 .pd-btm-80 {
     padding-bottom: 80px;
 }
+.pd-btm-15 {
+	padding-bottom: 15px;
+}
+.pd-btm-50 {
+	padding-bottom: 50px;
+}
 .mg-top-30 {
 	margin-top: 30px !important;
+}
+.mg-top-20 {
+	margin-top: 20px;
+}
+.ct-bg-white {
+	background: #fff;
 }
 
 
