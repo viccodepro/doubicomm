@@ -33,12 +33,14 @@
     <!-- <link rel="stylesheet" href="frontend/css/jquery.fancybox.min.css"> -->
     <!-- Themify Icons -->
     <link rel="stylesheet" href="frontend/css/themify-icons.css">
+    <link rel="stylesheet" href="frontend/css/jquery-ui.min.css">
     <!-- Nice Select CSS -->
     <link rel="stylesheet" href="frontend/css/niceselect.css">
     <!-- Animate CSS -->
     <link rel="stylesheet" href="frontend/css/animate.css">
     <!-- Flex Slider CSS -->
     <!-- <link rel="stylesheet" href="frontend/css/flex-slider.min.css"> -->
+
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="frontend/css/owl-carousel.css">
 
@@ -49,6 +51,8 @@
     <link rel="stylesheet" href="frontend/css/theme-default.css">
     <link rel="stylesheet" href="frontend/css/style.css">
     <link rel="stylesheet" href="frontend/css/responsive.css">
+
+    <script src="frontend/js/jquery.min.js"></script>
 
 </head>
 
@@ -187,7 +191,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-12">
                         <!-- Logo -->
-                        <div class="dbclogo">
+                        <div class="dbclogo__ct">
                             <a href="index.html">
                                 <img class="dbclogo" src="frontend/imgs/up-dbclogo.jpg" alt="logo"></a>
                         </div>
@@ -201,7 +205,7 @@
                             <div class="dbcsearch-top">
                                 <form action="#" class="dbcsearch-form">
                                     <input type="text" name="dbcsearch" id="dbcsearch"
-                                        placeholder="Enter Search here...">
+                                        placeholder="Search for Products, Brands and More...">
                                     <button type="submit" value="dbcsearch"><i class="ti-search"></i></button>
                                 </form>
                             </div>
@@ -282,7 +286,7 @@
         <!-- End middle header -->
         <!-- Inner header -->
         <div class="dbcheader-inner">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="dbccat-nav-head">
                     <div class="row">
                         <div class="col-lg-3 col-md-3">
@@ -368,7 +372,7 @@
                                         <div class="dbcnav-inner">
                                             <ul class="nav dbcmain-menu dbcmenu navbar-nav">
                                                 <li class="active"><a href="#">Home</a></li>
-                                                <li><a href="#">Product</a></li>
+                                                <li><a href="product.html">Product</a></li>
                                                 <li><a href="#">Shop <i class="ti-angle-down"></i><span
                                                             class="new">New</span></a>
                                                     <ul class="dropdown">
@@ -434,11 +438,26 @@
                 </div>
             </div>
         </div>
+        <div class="dbcmobile-search__form">
+            <form action="">
+                <div class="row" id='form-container'>
+                    <div class="col-2 search-icon ">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-10 text-input" style="padding: 0;">
+                        <input class='search-input' id='input' name='query' type="text" id="search-input2"
+                            placeholder="Search for Products, Brands and More..."
+                            style='width:90%;color:var(--text-default);'>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
+
     <!-- /End Header -->
     <!-- Start Product Area -->
-    <section class="dbcshop-area pd-top-15">
-        <div class="container ct-bg-white pd-btm-50">
+    <section class="dbcshop-area">
+        <div class="container-fluid">
             <div class="row">
                 <!-- <div class="col-3 dbcshop__sidebar-top"></div> -->
                 <div class="col-12 mb-2">
@@ -491,38 +510,203 @@
                     <!-- /End Shop Bar -->
                 </div>
             </div>
-            <div class="row">
+        </div>
+        <div class="container-fluid">
+            <div class="row dbcshop__row">
                 <!-- Side bar -->
-                <div class="col-lg-3 col-md-3 dbcshop__sidebar">
-                    <div class="dbcall-category">
-                        <ul class="dbcmain-category">
-                            <li><a href="#">Reading Lamps</a></li>
-                            <li><a href="#">Power Banks</a></li>
-                            <li><a href="#">Huffers</a></li>
-                            <li><a href="#">Bluetooth Speakers</a></li>
-                            <li><a href="#">Memory Cards</a></li>
-                            <li><a href="#">Anti Blue light lenses</a></li>
-                            <li><a href="#">Electronic Pads</a></li>
-                            <li><a href="#">Projectors</a></li>
-                            <li><a href="#">Projectors</a></li>
-                            <li><a href="#">Projectors</a></li>
-                            <li><a href="#">Projectors</a></li>
-                        </ul>
+                <div class="col-lg-3 dbcshop__sidebar pd-btm-80">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Filters</h4>
+                        </div>
                     </div>
+                    <form action="" id="dbcshop-filter__Form">
+                        <div class="row">
+                            <div class="col-12 mg-top-30">
+                                <div class="product__filter">
+                                    <!-- Single Sidebar -->
+                                    <div class="dbcshop__filter">
+                                        <h4 class="dbcshop-filter__title">
+                                            Location
+                                        </h4>
+                                        <div class="form-group">
+                                            <select name="location" id="" class="dbcshop-sidebar-filter__group select2">
+                                                <option value="">Select</option>
+                                                <option value="douala">Douala</option>
+                                                <option value="yaounde">Yaounde</option>
+                                                <option value="bamenda">Bamenda</option>
+                                                <option value="kribi">Kribi</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mg-top-30">
+                                <div class="dbcshop__filter">
+                                    <h4 class="dbcshop-filter__title">
+                                        Price
+                                    </h4>
+                                    <div class="price-filter dbc-border pd-top-20">
+                                        <div id="slider-range">
+                                            <div class="price_slider_amount">
+                                                <div class="label-input">
+                                                    <span>Range:</span>
+                                                    <input type="text" id="amount-2" readonly>
+                                                    <input type="hidden" name="min_price" id="min_price" value="0">
+                                                    <input type="hidden" name="max_price" id="max_price" value="1000">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mg-top-30">
+                                <div class="dbcshop__filter">
+                                    <h4 class="dbcshop-filter__title">
+                                        Customer Ratings
+                                    </h4>
+                                    <div class="dbcshop__filter-body ratings">
+                                        <div class="form-group dbcshop-form-checkbox mg-top-15" style="display: flex;">
+                                            <input type="checkbox" id="room1" name="rooms" value="">
+                                            <label for="room1" class="dbcshop-form-label">4 <i class="fa fa-star"> &
+                                                    Above</i></label>
+                                        </div>
+                                        <div class="form-group dbcshop-form-checkbox mg-top-15" style="display: flex;">
+                                            <input type="checkbox" id="room1" name="rooms" value="">
+                                            <label for="room1" class="dbcshop-form-label"> 3 <i class="fa fa-star"> &
+                                                    Above</i></label>
+                                        </div>
+                                        <div class="form-group dbcshop-form-checkbox mg-top-15" style="display: flex;">
+                                            <input type="checkbox" id="room1" name="rooms" value="">
+                                            <label for="room1" class="dbcshop-form-label">2 <i class="fa fa-star"> &
+                                                    Above</i></label>
+                                        </div>
+                                        <div class="form-group dbcshop-form-checkbox mg-top-15" style="display: flex;">
+                                            <input type="checkbox" id="room1" name="rooms" value="">
+                                            <label for="room1" class="dbcshop-form-label">1 <i class="fa fa-star"> &
+                                                    Above</i></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mg-top-30">
+                                <div class="dbcshop__filter">
+                                    <h4 class="dbcshop-filter__title">
+                                        Sort
+                                    </h4>
+                                    <div class="form-group">
+                                        <select name="others_sorting" id=""
+                                            class="product-sidebar__group dbc-border select2noSearch">
+                                            <option value="default_sort">Default Sort</option>
+                                            <option value="price_low_to_high">Price: Low to Hight</option>
+                                            <option value="price_high_to_low">Price: Hight to Low</option>
+                                            <option value="sort_by_newest">Sort by newest</option>
+                                            <option value="sort_by_oldest">Sort byt oldest</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mg-top-30">
+                                <div class="dbcshop__filter">
+                                    <h4 class="dbcshop-filter__title">
+                                        Discounts
+                                    </h4>
+                                    <div class="dbcshop__filter-body ratings">
+                                        <div class="form-group dbcshop-form-checkbox mg-top-15" style="display: flex;">
+                                            <input type="checkbox" id="room1" name="rooms" value="">
+                                            <label for="room1" class="dbcshop-form-label">50<i class="fa fa-percent">
+                                                    off</i></label>
+                                        </div>
+                                        <div class="form-group dbcshop-form-checkbox mg-top-15" style="display: flex;">
+                                            <input type="checkbox" id="room1" name="rooms" value="">
+                                            <label for="room1" class="dbcshop-form-label"> 30<i class="fa fa-percent">
+                                                    off</i></label>
+                                        </div>
+                                        <div class="form-group dbcshop-form-checkbox mg-top-15" style="display: flex;">
+                                            <input type="checkbox" id="room1" name="rooms" value="">
+                                            <label for="room1" class="dbcshop-form-label">20<i class="fa fa-percent">
+                                                    off</i></label>
+                                        </div>
+                                        <div class="form-group dbcshop-form-checkbox mg-top-15" style="display: flex;">
+                                            <input type="checkbox" id="room1" name="rooms" value="">
+                                            <label for="room1" class="dbcshop-form-label">10<i class="fa fa-percent">
+                                                    off</i></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mg-top-30">
+                                <div class="dbcshop__filter">
+                                    <h4 class="dbcshop-filter__title">
+                                        Discounts
+                                    </h4>
+                                    <div class="price-filter dbc-border pd-top-20">
+                                        <div id="slider-range__v2">
+                                            <div class="discount_slider_amount">
+                                                <div class="label-input">
+                                                    <span>Range:</span>
+                                                    <input type="text" id="discount-vla" readonly>
+                                                    <input type="hidden" name="min_discount" id="min_discount"
+                                                        value="0">
+                                                    <input type="hidden" name="max_discount" id="max_discount"
+                                                        value="80">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mg-top-30">
+                                <div class="dbcshop__filter">
+                                    <h4 class="dbcshop-filter__title">
+                                        Brands
+                                    </h4>
+                                    <div class="form-group">
+                                        <!-- <select name="location" id="" class="dbcshop-sidebar-filter__group select2">
+                                            <option value="">Select</option>
+                                            <option value="douala">Douala</option>
+                                            <option value="yaounde">Yaounde</option>
+                                            <option value="bamenda">Bamenda</option>
+                                            <option value="kribi">Kribi</option>
+                                        </select> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <!-- Side bar Ends -->
-                <div class="col-9" style="background: #fff;">
-                    <div class="dbcproduct-info">
+
+                <div class="col-lg-9 pd-btm-80" style="background: #fff;">
+                    <div class="dbcshop-info">
                         <div class="tab-content" id="myTabContent">
+                            <div class="dbcshop__breadcrumb pd-top-15">
+                                <a href="">General Category ></a>
+                                <a href="">Category type ></a>
+                                <a href="">Name</a>
+                            </div>
                             <!-- Start Single Tab -->
                             <div class="tab-pane fade show active" id="dbc-grid" role="tabpanel">
                                 <div class="tab-single">
                                     <div class="row">
+
                                         <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
                                             data-aos-delay="300">
                                             <div class="single-product">
                                                 <div class="product-img">
-                                                    <a href="product-details.html">
+                                                    <a href="#">
                                                         <img class="default-img" src="./frontend/imgs/woman-ring.jpg"
                                                             alt="#">
                                                         <img class="hover-img" src="./frontend/imgs/woman-necklace.avif"
@@ -552,7 +736,7 @@
                                                     <p class="pdt-short-dec">The Finger ring that cost the
                                                         richest...
                                                     </p>
-                                                    <div class="dbcproduct-price">
+                                                    <div class="product-price">
                                                         <span>FCFA25000.00</span>
                                                     </div>
                                                 </div>
@@ -562,7 +746,7 @@
                                             data-aos-delay="300">
                                             <div class="single-product">
                                                 <div class="product-img">
-                                                    <a href="product-details.html">
+                                                    <a href="#">
                                                         <img class="default-img"
                                                             src="./frontend/imgs/phoneandaccessories.avif" alt="#">
                                                         <img class="hover-img" src="./frontend/imgs/dbclogo.png"
@@ -572,9 +756,11 @@
                                                         <div class="dbcproduct-action">
                                                             <a data-toggle="modal" data-target="#productModal"
                                                                 title="Quick View" href="#"><i
-                                                                    class="ti-eye"></i><span>Quick Shop</span></a>
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
                                                             <a title="Wishlist" href="#"><i
-                                                                    class="ti-heart"></i><span>Add to
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
                                                                     Wishlist</span></a>
                                                             <a title="Compare" href="#"><i
                                                                     class="ti-bar-chart-alt"></i><span>Add to
@@ -591,7 +777,7 @@
                                                     </h3>
                                                     <p class="pdt-short-dec">Dell have been renowned for their
                                                         outstanding...</p>
-                                                    <div class="dbcproduct-price">
+                                                    <div class="product-price">
                                                         <span>FCFA125000.00</span>
                                                     </div>
                                                 </div>
@@ -611,9 +797,11 @@
                                                         <div class="dbcproduct-action">
                                                             <a data-toggle="modal" data-target="#productModal"
                                                                 title="Quick View" href="#"><i
-                                                                    class="ti-eye"></i><span>Quick Shop</span></a>
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
                                                             <a title="Wishlist" href="#"><i
-                                                                    class="ti-heart"></i><span>Add to
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
                                                                     Wishlist</span></a>
                                                             <a title="Compare" href="#"><i
                                                                     class="ti-bar-chart-alt"></i><span>Add to
@@ -631,12 +819,140 @@
                                                     <p class="pdt-short-dec">The newest of the Hewlett Packard
                                                         Family...
                                                     </p>
-                                                    <div class="dbcproduct-price">
+                                                    <div class="product-price">
                                                         <span>FCFA225000.00</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
+                                            data-aos-delay="300">
+                                            <div class="single-product">
+                                                <div class="product-img">
+                                                    <a href="product-details.html">
+                                                        <img class="default-img" src="./frontend/imgs/woman-ring.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="./frontend/imgs/woman-necklace.avif"
+                                                            alt="#">
+                                                    </a>
+                                                    <div class="dbcbutton-head">
+                                                        <div class="dbcproduct-action">
+                                                            <a data-toggle="modal" data-target="#productModal"
+                                                                title="Quick View" href="#"><i
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
+                                                            <a title="Wishlist" href="#"><i
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
+                                                                    Wishlist</span></a>
+                                                            <a title="Compare" href="#"><i
+                                                                    class="ti-bar-chart-alt"></i><span>Add to
+                                                                    Compare</span></a>
+                                                        </div>
+                                                        <div class="dbcproduct-action-2">
+                                                            <a title="Add to cart" href="#">Add to cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dbcproduct-content">
+                                                    <h3 data-aos="zoom-in" data-aos-delay="300">
+                                                        <a href="product-details.html">Toshiba Latest Model</a>
+                                                    </h3>
+                                                    <p class="pdt-short-dec">The newest of the Hewlett Packard
+                                                        Family...
+                                                    </p>
+                                                    <div class="product-price">
+                                                        <span>FCFA225000.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
+                                            data-aos-delay="300">
+                                            <div class="single-product">
+                                                <div class="product-img">
+                                                    <a href="product-details.html">
+                                                        <img class="default-img" src="./frontend/imgs/woman-ring.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="./frontend/imgs/woman-necklace.avif"
+                                                            alt="#">
+                                                    </a>
+                                                    <div class="dbcbutton-head">
+                                                        <div class="dbcproduct-action">
+                                                            <a data-toggle="modal" data-target="#productModal"
+                                                                title="Quick View" href="#"><i
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
+                                                            <a title="Wishlist" href="#"><i
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
+                                                                    Wishlist</span></a>
+                                                            <a title="Compare" href="#"><i
+                                                                    class="ti-bar-chart-alt"></i><span>Add to
+                                                                    Compare</span></a>
+                                                        </div>
+                                                        <div class="dbcproduct-action-2">
+                                                            <a title="Add to cart" href="#">Add to cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dbcproduct-content">
+                                                    <h3 data-aos="zoom-in" data-aos-delay="300">
+                                                        <a href="product-details.html">Toshiba Latest Model</a>
+                                                    </h3>
+                                                    <p class="pdt-short-dec">The newest of the Hewlett Packard
+                                                        Family...
+                                                    </p>
+                                                    <div class="product-price">
+                                                        <span>FCFA225000.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
+                                            data-aos-delay="300">
+                                            <div class="single-product">
+                                                <div class="product-img">
+                                                    <a href="product-details.html">
+                                                        <img class="default-img" src="./frontend/imgs/woman-ring.jpg"
+                                                            alt="#">
+                                                        <img class="hover-img" src="./frontend/imgs/woman-necklace.avif"
+                                                            alt="#">
+                                                    </a>
+                                                    <div class="dbcbutton-head">
+                                                        <div class="dbcproduct-action">
+                                                            <a data-toggle="modal" data-target="#productModal"
+                                                                title="Quick View" href="#"><i
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
+                                                            <a title="Wishlist" href="#"><i
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
+                                                                    Wishlist</span></a>
+                                                            <a title="Compare" href="#"><i
+                                                                    class="ti-bar-chart-alt"></i><span>Add to
+                                                                    Compare</span></a>
+                                                        </div>
+                                                        <div class="dbcproduct-action-2">
+                                                            <a title="Add to cart" href="#">Add to cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dbcproduct-content">
+                                                    <h3 data-aos="zoom-in" data-aos-delay="300">
+                                                        <a href="product-details.html">Toshiba Latest Model</a>
+                                                    </h3>
+                                                    <p class="pdt-short-dec">The newest of the Hewlett Packard
+                                                        Family...
+                                                    </p>
+                                                    <div class="product-price">
+                                                        <span>FCFA225000.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
                                             data-aos-delay="300">
                                             <div class="single-product">
@@ -652,9 +968,11 @@
                                                         <div class="dbcproduct-action">
                                                             <a data-toggle="modal" data-target="#productModal"
                                                                 title="Quick View" href="#"><i
-                                                                    class="ti-eye"></i><span>Quick Shop</span></a>
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
                                                             <a title="Wishlist" href="#"><i
-                                                                    class="ti-heart"></i><span>Add to
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
                                                                     Wishlist</span></a>
                                                             <a title="Compare" href="#"><i
                                                                     class="ti-bar-chart-alt"></i><span>Add to
@@ -672,7 +990,7 @@
                                                     <p class="pdt-short-dec">The newest of the Hewlett Packard
                                                         Family...
                                                     </p>
-                                                    <div class="dbcproduct-price">
+                                                    <div class="product-price">
                                                         <span>FCFA25000.00</span>
                                                     </div>
                                                 </div>
@@ -692,9 +1010,11 @@
                                                         <div class="dbcproduct-action">
                                                             <a data-toggle="modal" data-target="#productModal"
                                                                 title="Quick View" href="#"><i
-                                                                    class="ti-eye"></i><span>Quick Shop</span></a>
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
                                                             <a title="Wishlist" href="#"><i
-                                                                    class="ti-heart"></i><span>Add to
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
                                                                     Wishlist</span></a>
                                                             <a title="Compare" href="#"><i
                                                                     class="ti-bar-chart-alt"></i><span>Add to
@@ -713,7 +1033,7 @@
                                                         is...
                                                     </p>
 
-                                                    <div class="dbcproduct-price">
+                                                    <div class="product-price">
                                                         <span>FCFA25000.00</span>
                                                     </div>
                                                 </div>
@@ -734,9 +1054,11 @@
                                                         <div class="dbcproduct-action">
                                                             <a data-toggle="modal" data-target="#productModal"
                                                                 title="Quick View" href="#"><i
-                                                                    class="ti-eye"></i><span>Quick Shop</span></a>
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
                                                             <a title="Wishlist" href="#"><i
-                                                                    class="ti-heart"></i><span>Add to
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
                                                                     Wishlist</span></a>
                                                             <a title="Compare" href="#"><i
                                                                     class="ti-bar-chart-alt"></i><span>Add to
@@ -753,12 +1075,13 @@
                                                     </h3 data-aos="zoom-in" data-aos-delay="300">
                                                     <p class="pdt-short-dec">Lenovo is gaining the market after its
                                                         released of the...</p>
-                                                    <div class="dbcproduct-price">
+                                                    <div class="product-price">
                                                         <span>FCFA 325000.00</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
                                             data-aos-delay="300">
                                             <div class="single-product">
@@ -773,9 +1096,11 @@
                                                         <div class="dbcproduct-action">
                                                             <a data-toggle="modal" data-target="#productModal"
                                                                 title="Quick View" href="#"><i
-                                                                    class="ti-eye"></i><span>Quick Shop</span></a>
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
                                                             <a title="Wishlist" href="#"><i
-                                                                    class="ti-heart"></i><span>Add to
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
                                                                     Wishlist</span></a>
                                                             <a title="Compare" href="#"><i
                                                                     class="ti-bar-chart-alt"></i><span>Add to
@@ -792,7 +1117,7 @@
                                                     </h3>
                                                     <p class="pdt-short-dec">The newest of the Mac 13 Family...</p>
 
-                                                    <div class="dbcproduct-price">
+                                                    <div class="product-price">
                                                         <span>FCFA 1,125,000.00</span>
                                                     </div>
                                                 </div>
@@ -813,7 +1138,8 @@
                                                         <div class="dbcproduct-action">
                                                             <a data-toggle="modal" data-target="#productModal"
                                                                 title="Quick View" href="#"><i
-                                                                    class="ti-eye"></i><span>Quick Shop</span></a>
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
                                                             <a title="Wishlist" href="#"><i
                                                                     class="ti-heart"></i><span>Add
                                                                     to
@@ -834,13 +1160,317 @@
                                                     <p class="pdt-short-dec">The newest of the Hewlett Packard
                                                         Family
                                                         of...</p>
-                                                    <div class="dbcproduct-price">
+                                                    <div class="product-price">
                                                         <span class="old">FCFA 160000.00</span>
                                                         <span>FCFA 145,000.00</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
+                                            data-aos-delay="300">
+                                            <div class="single-product">
+                                                <div class="product-img">
+                                                    <a href="product-details.html">
+                                                        <img class="default-img"
+                                                            src="./frontend/imgs/woman-necklace.avif" alt="#">
+                                                        <img class="hover-img" src="./frontend/imgs/dbclogo.png"
+                                                            alt="#">
+                                                        <span class="out-of-stock">Hot</span>
+                                                    </a>
+                                                    <div class="dbcbutton-head">
+                                                        <div class="dbcproduct-action">
+                                                            <a data-toggle="modal" data-target="#productModal"
+                                                                title="Quick View" href="#"><i
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
+                                                            <a title="Wishlist" href="#"><i
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
+                                                                    Wishlist</span></a>
+                                                            <a title="Compare" href="#"><i
+                                                                    class="ti-bar-chart-alt"></i><span>Add to
+                                                                    Compare</span></a>
+                                                        </div>
+                                                        <div class="dbcproduct-action-2">
+                                                            <a title="Add to cart" href="#">Add to cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dbcproduct-content">
+                                                    <h3 data-aos="zoom-in" data-aos-delay="300">
+                                                        <a href="product-details.html">HP 2019</a>
+                                                    </h3>
+                                                    <p class="pdt-short-dec">The newest of the Hewlett Packard
+                                                        Family
+                                                        of...</p>
+                                                    <div class="product-price">
+                                                        <span class="old">FCFA 160000.00</span>
+                                                        <span>FCFA 145,000.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
+                                            data-aos-delay="300">
+                                            <div class="single-product">
+                                                <div class="product-img">
+                                                    <a href="product-details.html">
+                                                        <img class="default-img" src="./frontend/imgs/furnitures.avif"
+                                                            alt="#">
+                                                        <img class="hover-img" src="./frontend/imgs/404-left.jpg"
+                                                            alt="#">
+                                                    </a>
+                                                    <div class="dbcbutton-head">
+                                                        <div class="dbcproduct-action">
+                                                            <a data-toggle="modal" data-target="#productModal"
+                                                                title="Quick View" href="#"><i
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
+                                                            <a title="Wishlist" href="#"><i
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
+                                                                    Wishlist</span></a>
+                                                            <a title="Compare" href="#"><i
+                                                                    class="ti-bar-chart-alt"></i><span>Add to
+                                                                    Compare</span></a>
+                                                        </div>
+                                                        <div class="dbcproduct-action-2">
+                                                            <a title="Add to cart" href="#">Add to cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dbcproduct-content">
+                                                    <h3 data-aos="zoom-in" data-aos-delay="300">
+                                                        <a href="product-details.html">Mac 13</a>
+                                                    </h3>
+                                                    <p class="pdt-short-dec">The newest of the Mac 13 Family...</p>
+
+                                                    <div class="product-price">
+                                                        <span>FCFA 1,125,000.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
+                                            data-aos-delay="300">
+                                            <div class="single-product">
+                                                <div class="product-img">
+                                                    <a href="product-details.html">
+                                                        <img class="default-img"
+                                                            src="./frontend/imgs/woman-necklace.avif" alt="#">
+                                                        <img class="hover-img" src="./frontend/imgs/dbclogo.png"
+                                                            alt="#">
+                                                        <span class="out-of-stock">Hot</span>
+                                                    </a>
+                                                    <div class="dbcbutton-head">
+                                                        <div class="dbcproduct-action">
+                                                            <a data-toggle="modal" data-target="#productModal"
+                                                                title="Quick View" href="#"><i
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
+                                                            <a title="Wishlist" href="#"><i
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
+                                                                    Wishlist</span></a>
+                                                            <a title="Compare" href="#"><i
+                                                                    class="ti-bar-chart-alt"></i><span>Add to
+                                                                    Compare</span></a>
+                                                        </div>
+                                                        <div class="dbcproduct-action-2">
+                                                            <a title="Add to cart" href="#">Add to cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dbcproduct-content">
+                                                    <h3 data-aos="zoom-in" data-aos-delay="300">
+                                                        <a href="product-details.html">HP 2019</a>
+                                                    </h3>
+                                                    <p class="pdt-short-dec">The newest of the Hewlett Packard
+                                                        Family
+                                                        of...</p>
+                                                    <div class="product-price">
+                                                        <span class="old">FCFA 160000.00</span>
+                                                        <span>FCFA 145,000.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
+                                            data-aos-delay="300">
+                                            <div class="single-product">
+                                                <div class="product-img">
+                                                    <a href="product-details.html">
+                                                        <img class="default-img"
+                                                            src="./frontend/imgs/woman-necklace.avif" alt="#">
+                                                        <img class="hover-img" src="./frontend/imgs/dbclogo.png"
+                                                            alt="#">
+                                                        <span class="out-of-stock">Hot</span>
+                                                    </a>
+                                                    <div class="dbcbutton-head">
+                                                        <div class="dbcproduct-action">
+                                                            <a data-toggle="modal" data-target="#productModal"
+                                                                title="Quick View" href="#"><i
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
+                                                            <a title="Wishlist" href="#"><i
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
+                                                                    Wishlist</span></a>
+                                                            <a title="Compare" href="#"><i
+                                                                    class="ti-bar-chart-alt"></i><span>Add to
+                                                                    Compare</span></a>
+                                                        </div>
+                                                        <div class="dbcproduct-action-2">
+                                                            <a title="Add to cart" href="#">Add to cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dbcproduct-content">
+                                                    <h3 data-aos="zoom-in" data-aos-delay="300">
+                                                        <a href="product-details.html">HP 2019</a>
+                                                    </h3>
+                                                    <p class="pdt-short-dec">The newest of the Hewlett Packard
+                                                        Family
+                                                        of...</p>
+                                                    <div class="product-price">
+                                                        <span class="old">FCFA 160000.00</span>
+                                                        <span>FCFA 145,000.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
+                                            data-aos-delay="300">
+                                            <div class="single-product">
+                                                <div class="product-img">
+                                                    <a href="product-details.html">
+                                                        <img class="default-img" src="./frontend/imgs/furnitures.avif"
+                                                            alt="#">
+                                                        <img class="hover-img" src="./frontend/imgs/404-left.jpg"
+                                                            alt="#">
+                                                    </a>
+                                                    <div class="dbcbutton-head">
+                                                        <div class="dbcproduct-action">
+                                                            <a data-toggle="modal" data-target="#productModal"
+                                                                title="Quick View" href="#"><i
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
+                                                            <a title="Wishlist" href="#"><i
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
+                                                                    Wishlist</span></a>
+                                                            <a title="Compare" href="#"><i
+                                                                    class="ti-bar-chart-alt"></i><span>Add to
+                                                                    Compare</span></a>
+                                                        </div>
+                                                        <div class="dbcproduct-action-2">
+                                                            <a title="Add to cart" href="#">Add to cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dbcproduct-content">
+                                                    <h3 data-aos="zoom-in" data-aos-delay="300">
+                                                        <a href="product-details.html">Mac 13</a>
+                                                    </h3>
+                                                    <p class="pdt-short-dec">The newest of the Mac 13 Family...</p>
+
+                                                    <div class="product-price">
+                                                        <span>FCFA 1,125,000.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
+                                            data-aos-delay="300">
+                                            <div class="single-product">
+                                                <div class="product-img">
+                                                    <a href="product-details.html">
+                                                        <img class="default-img"
+                                                            src="./frontend/imgs/woman-necklace.avif" alt="#">
+                                                        <img class="hover-img" src="./frontend/imgs/dbclogo.png"
+                                                            alt="#">
+                                                        <span class="out-of-stock">Hot</span>
+                                                    </a>
+                                                    <div class="dbcbutton-head">
+                                                        <div class="dbcproduct-action">
+                                                            <a data-toggle="modal" data-target="#productModal"
+                                                                title="Quick View" href="#"><i
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
+                                                            <a title="Wishlist" href="#"><i
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
+                                                                    Wishlist</span></a>
+                                                            <a title="Compare" href="#"><i
+                                                                    class="ti-bar-chart-alt"></i><span>Add to
+                                                                    Compare</span></a>
+                                                        </div>
+                                                        <div class="dbcproduct-action-2">
+                                                            <a title="Add to cart" href="#">Add to cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dbcproduct-content">
+                                                    <h3 data-aos="zoom-in" data-aos-delay="300">
+                                                        <a href="product-details.html">HP 2019</a>
+                                                    </h3>
+                                                    <p class="pdt-short-dec">The newest of the Hewlett Packard
+                                                        Family
+                                                        of...</p>
+                                                    <div class="product-price">
+                                                        <span class="old">FCFA 160000.00</span>
+                                                        <span>FCFA 145,000.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
+                                            data-aos-delay="300">
+                                            <div class="single-product">
+                                                <div class="product-img">
+                                                    <a href="product-details.html">
+                                                        <img class="default-img"
+                                                            src="./frontend/imgs/woman-necklace.avif" alt="#">
+                                                        <img class="hover-img" src="./frontend/imgs/dbclogo.png"
+                                                            alt="#">
+                                                        <span class="out-of-stock">Hot</span>
+                                                    </a>
+                                                    <div class="dbcbutton-head">
+                                                        <div class="dbcproduct-action">
+                                                            <a data-toggle="modal" data-target="#productModal"
+                                                                title="Quick View" href="#"><i
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
+                                                            <a title="Wishlist" href="#"><i
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
+                                                                    Wishlist</span></a>
+                                                            <a title="Compare" href="#"><i
+                                                                    class="ti-bar-chart-alt"></i><span>Add to
+                                                                    Compare</span></a>
+                                                        </div>
+                                                        <div class="dbcproduct-action-2">
+                                                            <a title="Add to cart" href="#">Add to cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dbcproduct-content">
+                                                    <h3 data-aos="zoom-in" data-aos-delay="300">
+                                                        <a href="product-details.html">HP 2019</a>
+                                                    </h3>
+                                                    <p class="pdt-short-dec">The newest of the Hewlett Packard
+                                                        Family
+                                                        of...</p>
+                                                    <div class="product-price">
+                                                        <span class="old">FCFA 160000.00</span>
+                                                        <span>FCFA 145,000.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -853,8 +1483,7 @@
                                             <div class="dbc-product dbc-product__list-style">
                                                 <!-- Product Head -->
                                                 <div class="dbc-product__head">
-                                                    <img src="./frontend/imgs/furnitures.avif"
-                                                        alt="">
+                                                    <img src="./frontend/imgs/furnitures.avif" alt="">
                                                     <!-- Top Sticky -->
                                                     <div class="dbc-product__hsticky">
                                                         <span class="price-dec">30% Off</span>
@@ -867,23 +1496,33 @@
                                                         <div class="dbc-product__price">FCFA 100,000</div>
                                                     </div>
                                                     <h3 class="dbc-product__title">
-                                                        <a href="#">Toshiba Laptop</a>
+                                                        <a href="#">Modern Couches</a>
                                                     </h3>
                                                     <div class="dbc-product__text">
-                                                        <p>This is the latest version of the Dell Inc devices produced over time. It has all the necessary accessories ever...</p>
+                                                        <p>Bring the comfort home and stay relax all days. This
+                                                            furniture
+                                                            comes with it all the necessary accessories ever...</p>
                                                     </div>
                                                     <ul class="dbc-product__action-list dbc-border-top list-none">
                                                         <li>
                                                             <a title="Add to cart" href="#">Add to cart</a>
                                                         </li>
                                                         <li>
-                                                            <a data-toggle="modal" data-target="#productModal" title="Quick View" href="#"><i class="ti-eye"></i><span>Quick Shop</span></a>
+                                                            <a data-toggle="modal" data-target="#productModal"
+                                                                title="Quick View" href="#"><i
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
                                                         </li>
                                                         <li>
-                                                            <a title="Wishlist" href="#"><i class="ti-heart"></i><span>Add to Wishlist</span></a>
+                                                            <a title="Wishlist" href="#"><i
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
+                                                                    Wishlist</span></a>
                                                         </li>
                                                         <li>
-                                                            <a title="compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+                                                            <a title="compare" href="#"><i
+                                                                    class="ti-bar-chart-alt"></i><span>Add to
+                                                                    Compare</span></a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -894,8 +1533,7 @@
                                             <div class="dbc-product dbc-product__list-style">
                                                 <!-- Product Head -->
                                                 <div class="dbc-product__head">
-                                                    <img src="./frontend/imgs/furnitures.avif"
-                                                        alt="">
+                                                    <img src="./frontend/imgs/furnitures.avif" alt="">
                                                     <!-- Top Sticky -->
                                                     <div class="dbc-product__hsticky">
                                                         <span class="price-dec">30% Off</span>
@@ -911,20 +1549,29 @@
                                                         <a href="#">Latest Dell 2024 Laptop</a>
                                                     </h3>
                                                     <div class="dbc-product__text">
-                                                        <p>This is the latest version of the Dell Inc devices produced over time. It has all the necessary accessories ever...</p>
+                                                        <p>This is the latest version of the Dell Inc devices produced
+                                                            over time. It has all the necessary accessories ever...</p>
                                                     </div>
                                                     <ul class="dbc-product__action-list dbc-border-top list-none">
                                                         <li>
                                                             <a title="Add to cart" href="#">Add to cart</a>
                                                         </li>
                                                         <li>
-                                                            <a data-toggle="modal" data-target="#productModal" title="Quick View" href="#"><i class="ti-eye"></i><span>Quick Shop</span></a>
+                                                            <a data-toggle="modal" data-target="#productModal"
+                                                                title="Quick View" href="#"><i
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
                                                         </li>
                                                         <li>
-                                                            <a title="Wishlist" href="#"><i class="ti-heart"></i><span>Add to Wishlist</span></a>
+                                                            <a title="Wishlist" href="#"><i
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
+                                                                    Wishlist</span></a>
                                                         </li>
                                                         <li>
-                                                            <a title="compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+                                                            <a title="compare" href="#"><i
+                                                                    class="ti-bar-chart-alt"></i><span>Add to
+                                                                    Compare</span></a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -935,8 +1582,7 @@
                                             <div class="dbc-product dbc-product__list-style">
                                                 <!-- Product Head -->
                                                 <div class="dbc-product__head">
-                                                    <img src="./frontend/imgs/furnitures.avif"
-                                                        alt="">
+                                                    <img src="./frontend/imgs/furnitures.avif" alt="">
                                                     <!-- Top Sticky -->
                                                     <div class="dbc-product__hsticky">
                                                         <span class="price-dec">30% Off</span>
@@ -952,20 +1598,29 @@
                                                         <a href="#">Hp Model E324</a>
                                                     </h3>
                                                     <div class="dbc-product__text">
-                                                        <p>This is the latest version of the Dell Inc devices produced over time. It has all the necessary accessories ever...</p>
+                                                        <p>This is the latest version of the Dell Inc devices produced
+                                                            over time. It has all the necessary accessories ever...</p>
                                                     </div>
                                                     <ul class="dbc-product__action-list dbc-border-top list-none">
                                                         <li>
                                                             <a title="Add to cart" href="#">Add to cart</a>
                                                         </li>
                                                         <li>
-                                                            <a data-toggle="modal" data-target="#productModal" title="Quick View" href="#"><i class="ti-eye"></i><span>Quick Shop</span></a>
+                                                            <a data-toggle="modal" data-target="#productModal"
+                                                                title="Quick View" href="#"><i
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
                                                         </li>
                                                         <li>
-                                                            <a title="Wishlist" href="#"><i class="ti-heart"></i><span>Add to Wishlist</span></a>
+                                                            <a title="Wishlist" href="#"><i
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
+                                                                    Wishlist</span></a>
                                                         </li>
                                                         <li>
-                                                            <a title="compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+                                                            <a title="compare" href="#"><i
+                                                                    class="ti-bar-chart-alt"></i><span>Add to
+                                                                    Compare</span></a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -976,8 +1631,7 @@
                                             <div class="dbc-product dbc-product__list-style">
                                                 <!-- Product Head -->
                                                 <div class="dbc-product__head">
-                                                    <img src="./frontend/imgs/furnitures.avif"
-                                                        alt="">
+                                                    <img src="./frontend/imgs/furnitures.avif" alt="">
                                                     <!-- Top Sticky -->
                                                     <div class="dbc-product__hsticky">
                                                         <span class="price-dec">30% Off</span>
@@ -993,31 +1647,36 @@
                                                         <a href="#">HP 2019</a>
                                                     </h3>
                                                     <div class="dbc-product__text">
-                                                        <p>This is the latest version of the Dell Inc devices produced over time. It has all the necessary accessories ever...</p>
+                                                        <p>This is the latest version of the Dell Inc devices produced
+                                                            over time. It has all the necessary accessories ever...</p>
                                                     </div>
                                                     <ul class="dbc-product__action-list dbc-border-top list-none">
                                                         <li>
                                                             <a title="Add to cart" href="#">Add to cart</a>
                                                         </li>
                                                         <li>
-                                                            <a data-toggle="modal" data-target="#productModal" title="Quick View" href="#"><i class="ti-eye"></i><span>Quick Shop</span></a>
+                                                            <a data-toggle="modal" data-target="#productModal"
+                                                                title="Quick View" href="#"><i
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
                                                         </li>
                                                         <li>
-                                                            <a title="Wishlist" href="#"><i class="ti-heart"></i><span>Add to Wishlist</span></a>
+                                                            <a title="Wishlist" href="#"><i
+                                                                    class="ti-heart"></i><span>Add
+                                                                    to
+                                                                    Wishlist</span></a>
                                                         </li>
                                                         <li>
-                                                            <a title="compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+                                                            <a title="compare" href="#"><i
+                                                                    class="ti-bar-chart-alt"></i><span>Add to
+                                                                    Compare</span></a>
                                                         </li>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
 
-
-
-
-                                        
-                                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
+                                        <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
                                             data-aos-delay="300">
                                             <div class="single-product">
                                                 <div class="product-img">
@@ -1031,7 +1690,8 @@
                                                         <div class="dbcproduct-action">
                                                             <a data-toggle="modal" data-target="#productModal"
                                                                 title="Quick View" href="#"><i
-                                                                    class="ti-eye"></i><span>Quick Shop</span></a>
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
                                                             <a title="Wishlist" href="#"><i
                                                                     class="ti-heart"></i><span>Add
                                                                     to
@@ -1053,13 +1713,13 @@
                                                         is...
                                                     </p>
 
-                                                    <div class="dbcproduct-price">
+                                                    <div class="product-price">
                                                         <span>FCFA25000.00</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
+                                        <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
                                             data-aos-delay="300">
                                             <div class="single-product">
                                                 <div class="product-img">
@@ -1074,7 +1734,8 @@
                                                         <div class="dbcproduct-action">
                                                             <a data-toggle="modal" data-target="#productModal"
                                                                 title="Quick View" href="#"><i
-                                                                    class="ti-eye"></i><span>Quick Shop</span></a>
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
                                                             <a title="Wishlist" href="#"><i
                                                                     class="ti-heart"></i><span>Add
                                                                     to
@@ -1094,13 +1755,13 @@
                                                     </h3>
                                                     <p class="pdt-short-dec">Lenovo is gaining the market after its
                                                         released of the...</p>
-                                                    <div class="dbcproduct-price">
+                                                    <div class="product-price">
                                                         <span>FCFA 325000.00</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
+                                        <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
                                             data-aos-delay="300">
                                             <div class="single-product">
                                                 <div class="product-img">
@@ -1114,7 +1775,8 @@
                                                         <div class="dbcproduct-action">
                                                             <a data-toggle="modal" data-target="#productModal"
                                                                 title="Quick View" href="#"><i
-                                                                    class="ti-eye"></i><span>Quick Shop</span></a>
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
                                                             <a title="Wishlist" href="#"><i
                                                                     class="ti-heart"></i><span>Add
                                                                     to
@@ -1134,13 +1796,13 @@
                                                     </h3>
                                                     <p class="pdt-short-dec">The newest of the Mac 13 Family...</p>
 
-                                                    <div class="dbcproduct-price">
+                                                    <div class="product-price">
                                                         <span>FCFA 1,125,000.00</span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
+                                        <div class="col-xl-4 col-lg-4 col-sm-6 col-12" data-aos="fade-up"
                                             data-aos-delay="300">
                                             <div class="single-product">
                                                 <div class="product-img">
@@ -1155,7 +1817,8 @@
                                                         <div class="dbcproduct-action">
                                                             <a data-toggle="modal" data-target="#productModal"
                                                                 title="Quick View" href="#"><i
-                                                                    class="ti-eye"></i><span>Quick Shop</span></a>
+                                                                    class="ti-eye"></i><span>Quick
+                                                                    Shop</span></a>
                                                             <a title="Wishlist" href="#"><i
                                                                     class="ti-heart"></i><span>Add
                                                                     to
@@ -1176,7 +1839,7 @@
                                                     <p class="pdt-short-dec">The newest of the Hewlett Packard
                                                         Family
                                                         of...</p>
-                                                    <div class="dbcproduct-price">
+                                                    <div class="product-price">
                                                         <span class="old">FCFA 160000.00</span>
                                                         <span>FCFA 145,000.00</span>
                                                     </div>
@@ -1193,181 +1856,182 @@
         </div>
     </section>
     <!-- / End Product Area -->
+
     <!-- Start Most Popular -->
-    <div class="dbcproduct-area most-popular section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h2 data-aos="zoom-in" data-aos-delay="400">Hot Item</h2>
+    <section>
+        <div class="dbcshop-area most-popular section">
+            <div class="container dbcshop__row">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title">
+                            <h2 data-aos="zoom-in" data-aos-delay="400">Hot Item</h2>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="owl-carousel popular-slider" data-aos="fade-up" data-aos-delay="400">
-                        <!-- Start Single Product -->
-                        <div class="single-product">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img src="frontend/imgs/product-4-50.png" alt="" class="default-img">
-                                    <img src="frontend/imgs/product-2.jpg" alt="" class="hover-img">
-                                    <span class="out-of-stock">Hot</span>
-                                </a>
-                                <div class="dbcbutton-head">
-                                    <div class="dbcproduct-action">
-                                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
-                                            href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to
-                                                Wishlist</span></a>
-                                        <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to
-                                                Compare</span></a>
+                <div class="row pd-btm-200 " style="top:-25px">
+                    <div class="col-12">
+                        <div class="owl-carousel popular-slider" data-aos="fade-up" data-aos-delay="400">
+                            <!-- Start Single Product -->
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a href="product-details.html">
+                                        <img src="frontend/imgs/product-4-50.png" alt="" class="default-img">
+                                        <img src="frontend/imgs/product-2.jpg" alt="" class="hover-img">
+                                        <span class="out-of-stock">Hot</span>
+                                    </a>
+                                    <div class="dbcbutton-head">
+                                        <div class="dbcproduct-action">
+                                            <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+                                            <a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to
+                                                    Wishlist</span></a>
+                                            <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to
+                                                    Compare</span></a>
+                                        </div>
+                                        <div class="dbcproduct-action-2">
+                                            <a title="Add to cart" href="#">Add to cart</a>
+                                        </div>
                                     </div>
-                                    <div class="dbcproduction-action-2">
-                                        <a title="Add to cart" href="#">Add to cart</a>
+                                </div>
+                                <div class="dbcproduct-content">
+                                    <h3><a href="product-details.html">Dell Latitude E5441</a></h3>
+                                    <div class="product-price">
+                                        <span class="old">FCFA125000.00</span>
+                                        <span>FCFA150050.00</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="dbcproduct-content">
-                                <h3><a href="product-details.html">Dell Latitude E5441</a></h3>
-                                <div class="product-price">
-                                    <span class="old">FCFA125000.00</span>
-                                    <span>FCFA150050.00</span>
+                            <!-- Start Single Product -->
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a href="product-details.html">
+                                        <img src="frontend/imgs/product-4-50.png" alt="" class="default-img">
+                                        <img src="frontend/imgs/product-2.jpg" alt="" class="hover-img">
+                                        <span class="out-of-stock">Hot</span>
+                                    </a>
+                                    <div class="dbcbutton-head">
+                                        <div class="dbcproduct-action">
+                                            <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+                                            <a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to
+                                                    Wishlist</span></a>
+                                            <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to
+                                                    Compare</span></a>
+                                        </div>
+                                        <div class="dbcproduct-action-2">
+                                            <a title="Add to cart" href="#">Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dbcproduct-content">
+                                    <h3><a href="product-details.html">Hp 12TH Generation</a></h3>
+                                    <div class="product-price">
+                                        <span>FCFA50000.00</span>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- Start Single Product -->
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a href="product-details.html">
+                                        <img src="frontend/imgs/product-4-50.png" alt="" class="default-img">
+                                        <img src="frontend/imgs/product-2.jpg" alt="" class="hover-img">
+                                        <span class="out-of-stock">Hot</span>
+                                    </a>
+                                    <div class="dbcbutton-head">
+                                        <div class="dbcproduct-action">
+                                            <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+                                            <a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to
+                                                    Wishlist</span></a>
+                                            <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to
+                                                    Compare</span></a>
+                                        </div>
+                                        <div class="dbcproduct-action-2">
+                                            <a title="Add to cart" href="#">Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dbcproduct-content">
+                                    <h3><a href="product-details.html">Lenovo 2023</a></h3>
+                                    <div class="product-price">
+                                        <span class="old">FCFA300000.00</span>
+                                        <span>FCFA250000.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /End Single Product -->
+                            <!-- Start Single Product -->
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a href="product-details.html">
+                                        <img src="frontend/imgs/product-4-50.png" alt="" class="default-img">
+                                        <img src="frontend/imgs/product-2.jpg" alt="" class="hover-img">
+                                        <span class="out-of-stock">Hot</span>
+                                    </a>
+                                    <div class="dbcbutton-head">
+                                        <div class="dbcproduct-action">
+                                            <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+                                            <a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to
+                                                    Wishlist</span></a>
+                                            <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to
+                                                    Compare</span></a>
+                                        </div>
+                                        <div class="dbcproduct-action-2">
+                                            <a title="Add to cart" href="#">Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dbcproduct-content">
+                                    <h3><a href="product-details.html">Black Sunglass For Women</a></h3>
+                                    <div class="product-price">
+                                        <span>FCFA1500.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Start Single Product -->
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a href="product-details.html">
+                                        <img src="frontend/imgs/product-4-50.png" alt="" class="default-img">
+                                        <img src="frontend/imgs/product-2.jpg" alt="" class="hover-img">
+                                        <span class="out-of-stock">Hot</span>
+                                    </a>
+                                    <div class="dbcbutton-head">
+                                        <div class="dbcproduct-action">
+                                            <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
+                                                href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+                                            <a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to
+                                                    Wishlist</span></a>
+                                            <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to
+                                                    Compare</span></a>
+                                        </div>
+                                        <div class="dbcproduct-action-2">
+                                            <a title="Add to cart" href="#">Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dbcproduct-content">
+                                    <h3><a href="product-details.html">Black Sunglass For Women</a></h3>
+                                    <div class="product-price">
+                                        <span class="old">$60.00</span>
+                                        <span>$50.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /End Single Product -->
                         </div>
-                        <!-- /End Single Product -->
-                        <!-- Start Single Product -->
-                        <div class="single-product">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img src="frontend/imgs/product-4-50.png" alt="" class="default-img">
-                                    <img src="frontend/imgs/product-2.jpg" alt="" class="hover-img">
-                                    <span class="out-of-stock">Hot</span>
-                                </a>
-                                <div class="dbcbutton-head">
-                                    <div class="dbcproduct-action">
-                                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
-                                            href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to
-                                                Wishlist</span></a>
-                                        <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to
-                                                Compare</span></a>
-                                    </div>
-                                    <div class="dbcproduction-action-2">
-                                        <a title="Add to cart" href="#">Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dbcproduct-content">
-                                <h3><a href="product-details.html">Hp 12TH Generation</a></h3>
-                                <div class="product-price">
-                                    <span>FCFA50000.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /End Single Product -->
-                        <!-- Start Single Product -->
-                        <div class="single-product">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img src="frontend/imgs/product-4-50.png" alt="" class="default-img">
-                                    <img src="frontend/imgs/product-2.jpg" alt="" class="hover-img">
-                                    <span class="out-of-stock">Hot</span>
-                                </a>
-                                <div class="dbcbutton-head">
-                                    <div class="dbcproduct-action">
-                                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
-                                            href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to
-                                                Wishlist</span></a>
-                                        <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to
-                                                Compare</span></a>
-                                    </div>
-                                    <div class="dbcproduction-action-2">
-                                        <a title="Add to cart" href="#">Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dbcproduct-content">
-                                <h3><a href="product-details.html">Lenovo 2023</a></h3>
-                                <div class="product-price">
-                                    <span class="old">FCFA300000.00</span>
-                                    <span>FCFA250000.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /End Single Product -->
-                        <!-- Start Single Product -->
-                        <div class="single-product">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img src="frontend/imgs/product-4-50.png" alt="" class="default-img">
-                                    <img src="frontend/imgs/product-2.jpg" alt="" class="hover-img">
-                                    <span class="out-of-stock">Hot</span>
-                                </a>
-                                <div class="dbcbutton-head">
-                                    <div class="dbcproduct-action">
-                                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
-                                            href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to
-                                                Wishlist</span></a>
-                                        <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to
-                                                Compare</span></a>
-                                    </div>
-                                    <div class="dbcproduction-action-2">
-                                        <a title="Add to cart" href="#">Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dbcproduct-content">
-                                <h3><a href="product-details.html">Black Sunglass For Women</a></h3>
-                                <div class="product-price">
-                                    <span>FCFA1500.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Start Single Product -->
-                        <div class="single-product">
-                            <div class="product-img">
-                                <a href="product-details.html">
-                                    <img src="frontend/imgs/product-4-50.png" alt="" class="default-img">
-                                    <img src="frontend/imgs/product-2.jpg" alt="" class="hover-img">
-                                    <span class="out-of-stock">Hot</span>
-                                </a>
-                                <div class="dbcbutton-head">
-                                    <div class="dbcproduct-action">
-                                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View"
-                                            href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to
-                                                Wishlist</span></a>
-                                        <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to
-                                                Compare</span></a>
-                                    </div>
-                                    <div class="dbcproduction-action-2">
-                                        <a title="Add to cart" href="#">Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dbcproduct-content">
-                                <h3><a href="product-details.html">Black Sunglass For Women</a></h3>
-                                <div class="product-price">
-                                    <span class="old">$60.00</span>
-                                    <span>$50.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /End Single Product -->
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- /End Most Popular -->
+    </section>
+
     <!-- Start Shop Services Area -->
-    <section class="shop-services section home" data-aos="fade-up" data-aos-delay="300">
+    <section class="shop-services section home">
         <div class="container">
-            <div class="row">
+            <div class="row dbcshop__row">
                 <div class="col-lg-3 col-sm-6 col-12">
                     <!-- Start Single Service -->
                     <div class="single-service" data-aos="fade-up" data-aos-delay="400">
@@ -1413,7 +2077,7 @@
     <section class="shop-newsletter section">
         <div class="container">
             <div class="inner-top">
-                <div class="row">
+                <div class="row dbcshop__row">
                     <div class="col-lg-8 offset-lg-2 col-12">
                         <!-- Start Newsletter Inner -->
                         <div class="inner">
@@ -1536,13 +2200,12 @@
 
 
     <!-- Jquery -->
-    <script src="frontend/js/jquery.min.js"></script>
     <script src="frontend/js/jquery-migrate-3.0.0.js"></script>
-
+    <script src="frontend/js/jquery-ui.min.js"></script>
     <!--  What is the function of the jquery-migrate library
       And Why do the carousel library depend on it -->
 
-    <!-- <script src="frontend/js/jquery-ui.min.js"></script> -->
+
     <!-- <script src="frontend/js/popper.min.js"></script> -->
 
     <!-- Bootstrap Js -->
@@ -1555,6 +2218,44 @@
     <script src="frontend/js/nicesellect.js"></script>
     <!-- <script src="frontend/js/easing.js"></script> -->
     <script src="frontend/js/active.js"></script>
+
+    <script>
+        (function ($) {
+            "use strict";
+            $(document).ready(function () {
+                $("#slider-range").slider({
+                    range: true,
+                    min: 0,
+                    max: 1000,
+                    values: [0, 1000],
+                    slide: function (event, ui) {
+                        let price_text = `FCFA ${ui.values[0]} - FCFA ${ui.values[1]}`;
+                        $("#amount-2").val(price_text);
+                        $("#min_price").val(ui.values[0]);
+                        $("#max_price").val(ui.values[1]);
+                    }
+                });
+                let loading_time_price_text = `FCFA ${$("#slider-range").slider("values", 0)} - FCFA ${$("#slider-range").slider("values", 1)}`;
+                $("#amount-2").val(loading_time_price_text);
+
+                $("#slider-range__v2").slider({
+                    range: true,
+                    min: 0,
+                    max: 80,
+                    values: [0, 80],
+                    slide: function (event, ui) {
+                        let discount_text = `${ui.values[0]}% - ${ui.values[1]}%`;
+                        $("#discount-vla").val(discount_text);
+                        $("#min_discount").val(ui.values[0]);
+                        $("#max_discount").val(ui.values[1]);
+                    }
+                });
+                let loading_time_discount_text = `${$("#slider-range__v2").slider("values", 0)}% - ${$("#slider-range__v2").slider("values", 1)}%`;
+                $("#discount-vla").val(loading_time_discount_text);
+            });
+
+        })(jQuery);
+    </script>
 </body>
 
 </html>

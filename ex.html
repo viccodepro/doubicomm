@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElevateZoom Example</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/3.0.8/css/elevatezoom.css"> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="frontend/js/jquery.elevateZoom.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .zoom-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .zoom-image {
+            width: 300px;
+            /* Adjust size as needed */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>ElevateZoom Example</h1>
+    <div class="zoom-container">
+        <img id="zoom_01" class="zoom-image" src="https://via.placeholder.com/300"
+            data-zoom-image="https://via.placeholder.com/800" alt="Dummy Image">
+    </div>
+
+    <script>
+        (function ($) {
+            $(document).ready(function () {
+                function initializeZoom() {
+                    var zoomType;
+
+                    if (window.innerWidth <= 991) {
+                        // For mobile devices
+                        zoomType = "inner";
+                    } else {
+                        // For tablets and desktops
+                        zoomType = "window";
+                    }
+
+                    $("#zoom_01").elevateZoom({
+                        zoomType: zoomType,
+                        cursor: "pointer",
+                        scrollZoom: true,
+                        zoomWindowWidth: 500,
+                        zoomWindowHeight: 500
+                    });
+                    
+                }
+
+                // Initialize zoom on page load
+                initializeZoom();
+
+                // Reinitialize zoom on window resize (optional)
+                $(window).resize(function () {
+                    $("#zoom_01").data('elevateZoom').exit(); // Exit current zoom
+                    initializeZoom(); // Reinitialize based on new width
+                });
+            });
+        }) (jQuery);
+    </script>
+
+</body>
+
+</html>

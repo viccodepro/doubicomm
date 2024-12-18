@@ -16,13 +16,14 @@ Version:1.0
 
 	16. Scroll to Top JS
 	17. Nice Select JS
+	18. Product Quantity Input
 	19. Preloader JS
 
 */
 
 (function ($) {
 	"use strict";
-
+	owlCarousels();
 	/*====================================
 			Mobile Menu
 	======================================*/
@@ -55,6 +56,71 @@ Version:1.0
 			$('.header').removeClass("sticky");
 		}
 	});
+
+	// // Popup - Iframe Video - Map etc.
+	// if ( $.fn.magnificPopup ) {
+	//     $('.btn-iframe').magnificPopup({
+	//         type: 'iframe',
+	//         removalDelay: 600,
+	//         preloader: false,
+	//         fixedContentPos: false,
+	//         closeBtnInside: false
+	//     });
+	// }
+
+	// Product Image Zoom plugin - product pages
+	if ($.fn.elevateZoom) {
+		var zoom_type;
+		if (window.innerWidth <= 991) {
+			zoom_type = "inner";
+		} else {
+			zoom_type = "window";
+		}
+		function initializeZoom() {
+			$('#product-zoom').elevateZoom({
+				gallery: 'product-zoom-gallery',
+				galleryActiveClass: 'active',
+				zoomType: zoom_type,
+				zoomWindowWidth: 500,
+				zoomWindowHeight: 500,
+				cursor: "crosshair",
+				zoomWindowFadeIn: 400,
+				zoomWindowFadeOut: 400,
+				responsive: true
+			});
+		}
+		initializeZoom();
+		// On click change thumbs active item
+		$('.product-gallery-item').on('click', function (e) {
+			e.preventDefault();
+			$('#product-zoom-gallery').find('a').removeClass('active');
+			$(this).addClass('active');
+			// Change the main product image based on the thumbnail clicked
+			const newSrc = $(this).find('img').attr('data-zoom-image');
+			console.log(newSrc);
+			$('#product-zoom').attr('src', newSrc).attr('data-zoom-image', newSrc)//.data('elevateZoom');.changeZoom(newSrc);//$(this).find('img').data('data-zoom-image')
+		});
+
+		var ez = $('#product-zoom').data('elevateZoom');
+		
+		// Open popup - product images
+		$('#btn-product-gallery').on('click', function (e) {
+			if ($.fn.magnificPopup) {
+				$.magnificPopup.open({
+					items: ez.getGalleryList(),
+					type: 'image',
+					gallery: {
+						enabled: true
+					},
+					fixedContentPos: false,
+					removalDelay: 600,
+					closeBtnInside: false
+				}, 0);
+
+				e.preventDefault();
+			}
+		});
+	}
 
 	/*====================================
 		06.  Popular Slider JS
@@ -113,7 +179,7 @@ Version:1.0
 	});
 
 
-	
+
 	/*====================================
 		16. Scroll To Top JS
 	======================================*/
@@ -139,6 +205,54 @@ Version:1.0
 				  on html select element
 	==================================================*/
 	$('select').niceSelect();
+
+	/* Product Quantity Input */
+	// Quantity Input - Cart page - Product Details pages
+	function quantityInputs() {
+		if ($.fn.inputSpinner) {
+			$("input[type='number']").inputSpinner({
+				decrementButton: '<i class="icon-minus"></i>',
+				incrementButton: '<i class="icon-plus"></i>',
+				groupClass: 'input-spinner',
+				buttonsClass: 'btn-spinner',
+				buttonsWidth: '26px'
+			});
+		}
+	}
+	quantityInputs();
+
+	function owlCarousels($wrap, options) {
+		if ($.fn.owlCarousel) {
+			var owlSettings = {
+				items: 1,
+				loop: true,
+				margin: 0,
+				responsiveClass: true,
+				nav: true,
+				navText: ['<i class="icon-angle-left">', '<i class="icon-angle-right">'],
+				dots: true,
+				smartSpeed: 400,
+				autoplay: false,
+				autoplayTimeout: 15000
+			};
+			if (typeof $wrap == 'undefined') {
+				$wrap = $('body');
+			}
+			if (options) {
+				owlSettings = $.extend({}, owlSettings, options);
+			}
+
+			// Init all carousel
+			$wrap.find('[data-toggle="owl"]').each(function () {
+				var $this = $(this),
+					newOwlSettings = $.extend({}, owlSettings, $this.data('owl-options'));
+
+				$this.owlCarousel(newOwlSettings);
+
+			});
+		}
+	}
+
 
 	/* Preloader Js */
 	// After 2s preloader is fadeOut
