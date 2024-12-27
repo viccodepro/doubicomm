@@ -263,7 +263,7 @@
                                 <div class="dbcshopping-item">
                                     <div class="dropdown-cart-header">
                                         <span>2 Items</span>
-                                        <a href="#">View Cart</a>
+                                        <a href="cart.html">View Cart</a>
                                     </div>
                                     <ul class="dbcshopping-list">
                                         <li>
@@ -502,7 +502,9 @@
                                         <!-- Start Product main image -->
                                         <figure class="product-main-image">
                                             <span class="product-label label-top">Top</span>
-                                            <img id="product-zoom" src="assets/images/products/single/sidebar-gallery/1-big.jpg" alt="product image">
+                                            <img id="product-zoom"
+                                                src="assets/images/products/single/sidebar-gallery/1-big.jpg"
+                                                alt="product image">
 
                                             <a href="#" id="btn-product-gallery" class="btn-product-gallery">
                                                 <i class="icon-arrows"></i>
@@ -510,20 +512,32 @@
                                         </figure>
                                         <!-- Start product gallery -->
                                         <div id="product-zoom-gallery" class="product-image-gallery">
-                                            <a class="product-gallery-item active" href="#" data-image="assets/images/products/single/sidebar-gallery/1-big.jpg" >
-                                                <img src="assets/images/products/single/sidebar-gallery/1-small.jpg" alt="product side" data-zoom-image="assets/images/products/single/sidebar-gallery/1.jpg">
+                                            <a class="product-gallery-item active" href="#"
+                                                data-image="assets/images/products/single/sidebar-gallery/1-big.jpg">
+                                                <img src="assets/images/products/single/sidebar-gallery/1-small.jpg"
+                                                    alt="product side"
+                                                    data-zoom-image="assets/images/products/single/sidebar-gallery/1.jpg">
                                             </a>
 
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/sidebar-gallery/2-big.jpg">
-                                                <img src="assets/images/products/single/sidebar-gallery/2-small.jpg" alt="product cross" data-zoom-image="assets/images/products/single/sidebar-gallery/2.jpg">
+                                            <a class="product-gallery-item" href="#"
+                                                data-image="assets/images/products/single/sidebar-gallery/2-big.jpg">
+                                                <img src="assets/images/products/single/sidebar-gallery/2-small.jpg"
+                                                    alt="product cross"
+                                                    data-zoom-image="assets/images/products/single/sidebar-gallery/2.jpg">
                                             </a>
 
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/sidebar-gallery/3-big.jpg" >
-                                                <img src="assets/images/products/single/sidebar-gallery/3-small.jpg" alt="product with model" data-zoom-image="assets/images/products/single/sidebar-gallery/3.jpg">
+                                            <a class="product-gallery-item" href="#"
+                                                data-image="assets/images/products/single/sidebar-gallery/3-big.jpg">
+                                                <img src="assets/images/products/single/sidebar-gallery/3-small.jpg"
+                                                    alt="product with model"
+                                                    data-zoom-image="assets/images/products/single/sidebar-gallery/3.jpg">
                                             </a>
 
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/sidebar-gallery/4-big.jpg" >
-                                                <img src="assets/images/products/single/sidebar-gallery/4-small.jpg" alt="product back" data-zoom-image="assets/images/products/single/sidebar-gallery/4.jpg">
+                                            <a class="product-gallery-item" href="#"
+                                                data-image="assets/images/products/single/sidebar-gallery/4-big.jpg">
+                                                <img src="assets/images/products/single/sidebar-gallery/4-small.jpg"
+                                                    alt="product back"
+                                                    data-zoom-image="assets/images/products/single/sidebar-gallery/4.jpg">
                                             </a>
                                         </div>
                                     </div>
@@ -534,7 +548,7 @@
                                         <div class="ratings-container">
                                             <div class="ratings">
                                                 <div class="ratings-val" style="width: 80%;"></div>
-                                                
+
                                             </div>
                                             <a class="ratings-text" href="#product-review-link" id="review-link">( 2
                                                 Reviews )</a>
@@ -579,8 +593,8 @@
                                             <div class="details-action-col">
                                                 <label for="qty">Qty:</label>
                                                 <div class="product-details-quantity">
-                                                    <input type="number" id="qty" class="form-control" value="1"
-                                                        min="1" max="10" step="1" data-decimals="0" required>
+                                                    <input type="number" id="qty" class="form-control" value="1" min="1"
+                                                        max="10" step="1" data-decimals="0" required>
                                                 </div>
 
                                                 <a href="#" class="btn-product btn-cart"><span>add to
@@ -588,11 +602,9 @@
                                             </div>
 
                                             <div class="details-action-wrapper">
-                                                <a href="#" class="btn-product btn-wishlist"
-                                                    title="Wishlist"><span>Add
+                                                <a href="#" class="btn-product btn-wishlist" title="Wishlist"><span>Add
                                                         to Wishlist</span></a>
-                                                <a href="#" class="btn-product btn-compare"
-                                                    title="Compare"><span>Add to
+                                                <a href="#" class="btn-product btn-compare" title="Compare"><span>Add to
                                                         Compare</span></a>
                                             </div>
                                         </div>
@@ -1342,35 +1354,20 @@
         (function ($) {
             "use strict";
             $(document).ready(function () {
-                $("#slider-range").slider({
-                    range: true,
-                    min: 0,
-                    max: 1000,
-                    values: [0, 1000],
-                    slide: function (event, ui) {
-                        let price_text = `FCFA ${ui.values[0]} - FCFA ${ui.values[1]}`;
-                        $("#amount-2").val(price_text);
-                        $("#min_price").val(ui.values[0]);
-                        $("#max_price").val(ui.values[1]);
+                /* Product Quantity Input */
+                // Quantity Input - Cart page - Product Details pages
+                function quantityInputs() {
+                    if ($.fn.inputSpinner) {
+                        $("input[type='number']").inputSpinner({
+                            decrementButton: '<i class="icon-minus"></i>',
+                            incrementButton: '<i class="icon-plus"></i>',
+                            groupClass: 'input-spinner',
+                            buttonsClass: 'btn-spinner',
+                            buttonsWidth: '26px'
+                        });
                     }
-                });
-                let loading_time_price_text = `FCFA ${$("#slider-range").slider("values", 0)} - FCFA ${$("#slider-range").slider("values", 1)}`;
-                $("#amount-2").val(loading_time_price_text);
-
-                $("#slider-range__v2").slider({
-                    range: true,
-                    min: 0,
-                    max: 80,
-                    values: [0, 80],
-                    slide: function (event, ui) {
-                        let discount_text = `${ui.values[0]}% - ${ui.values[1]}%`;
-                        $("#discount-vla").val(discount_text);
-                        $("#min_discount").val(ui.values[0]);
-                        $("#max_discount").val(ui.values[1]);
-                    }
-                });
-                let loading_time_discount_text = `${$("#slider-range__v2").slider("values", 0)}% - ${$("#slider-range__v2").slider("values", 1)}%`;
-                $("#discount-vla").val(loading_time_discount_text);
+                }
+                quantityInputs();
             });
         })(jQuery);
     </script>

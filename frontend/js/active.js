@@ -10,6 +10,7 @@ Version:1.0
 =========================================
 	01. Mobile Menu JS
 	02. Sticky Header JS
+	05. Checkbox JS
 	06. Popular Slider JS
 	13. Extra Scroll JS
 	14. Aos Animate JS
@@ -25,7 +26,7 @@ Version:1.0
 	"use strict";
 	owlCarousels();
 	/*====================================
-			Mobile Menu
+		01. Mobile Menu
 	======================================*/
 	var $offcanvasNav = $("#offcanvas-menu a");
 	$offcanvasNav.on("click", function () {
@@ -102,7 +103,7 @@ Version:1.0
 		});
 
 		var ez = $('#product-zoom').data('elevateZoom');
-		
+
 		// Open popup - product images
 		$('#btn-product-gallery').on('click', function (e) {
 			if ($.fn.magnificPopup) {
@@ -121,6 +122,16 @@ Version:1.0
 			}
 		});
 	}
+	/*===============================
+		10. Checkbox JS
+	=================================*/
+	$('input[type="checkbox"]').change(function () {
+		if ($(this).is(':checked')) {
+			$(this).parent("label").addClass("checked");
+		} else {
+			$(this).parent("label").removeClass("checked");
+		}
+	});
 
 	/*====================================
 		06.  Popular Slider JS
@@ -167,6 +178,7 @@ Version:1.0
 	// 	}, 900);
 	// 	e.preventDefault();
 	// });
+
 	/*====================================
 		14. Aos Animate JS
 	======================================*/
@@ -206,20 +218,7 @@ Version:1.0
 	==================================================*/
 	$('select').niceSelect();
 
-	/* Product Quantity Input */
-	// Quantity Input - Cart page - Product Details pages
-	function quantityInputs() {
-		if ($.fn.inputSpinner) {
-			$("input[type='number']").inputSpinner({
-				decrementButton: '<i class="icon-minus"></i>',
-				incrementButton: '<i class="icon-plus"></i>',
-				groupClass: 'input-spinner',
-				buttonsClass: 'btn-spinner',
-				buttonsWidth: '26px'
-			});
-		}
-	}
-	quantityInputs();
+
 
 	function owlCarousels($wrap, options) {
 		if ($.fn.owlCarousel) {

@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name='copyright' content='all rights reserved&copy;2024, DoubiCommerce Template'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- @yield('meta-tags') -->
+
+	<!-- Title tags -->
+	<title>DoubiCommerce - Template</title>
+	<meta name="keywords" content="HTML5, CSS3 and bootstrap 5 doubiComm E-commerce template">
+	<meta name="description" content="DoubiCommerce(DBC) Template - is an eCommerce HTML5 Template.">
+	<meta name="author" content="DoubiComm Templates">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="frontend/imgs/dbclogo-symbol.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="frontend/imgs/dbclogo-symbol.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="frontend/imgs/dbclogo-symbol.png">
+	<link rel="manifest" href="frontend/imgs/icons/site.html">
+	<link rel="mask-icon" href="frontend/imgs/icons/dbclogo-symbol.svg" color="#666666">
+	<!-- <link rel="shortcut icon" href="assets/images/icons/favicon.ico"> -->
+	<meta name="apple-mobile-web-app-title" content="DoubiComm">
+	<meta name="application-name" content="DoubiComm">
+	<meta name="msapplication-TileColor" content="#cc9966">
+	<meta name="msapplication-config" content="frontend/imgs/icons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<!-- Web Font -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+		rel="stylesheet">
+
+	<!-- Stylesheet -->
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="frontend/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="frontend/css/bootstrap-4.css"> -->
+	<link rel="stylesheet" href="frontend/css/aos.min.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="frontend/css/magnific-popup.min.css">
+	<link rel="stylesheet" href="frontend/css/font-awesome-all.min.css">
+	<!-- Fancybox -->
+	<!-- <link rel="stylesheet" href="frontend/css/jquery.fancybox.min.css"> -->
+	<link rel="stylesheet" href="frontend/css/themify-icons.css">
+	<link rel="stylesheet" href="frontend/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="frontend/css/niceselect.css">
+	<!-- Animate CSS -->
+	<link rel="stylesheet" href="frontend/css/animate.css">
+	<!-- Flex Slider CSS -->
+	<!-- <link rel="stylesheet" href="frontend/css/flex-slider.min.css"> -->
+
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="frontend/css/owl-carousel.css">
+	<link rel="stylesheet" href="frontend/css/magnific-popup.css">
+
+	<!-- Slicknav -->
+	<!-- <link rel="stylesheet" href="frontend/css/slicknav.min.css"> -->
+
+	<!-- doubiComm Stylesheet -->
+	<link rel="stylesheet" href="frontend/css/theme-default.css">
+	<link rel="stylesheet" href="frontend/css/style.css">
+	<link rel="stylesheet" href="frontend/css/responsive.css">
+
+	<script src="frontend/js/jquery.min.js"></script>
+	<style>
+		.zoomWindow {
+			border: 5px solid #f7941d !important;
+		}
+	</style>
+</head>
+
+<body class="js">
+	<!-- Preloader -->
+	<div class="dbcpreloader">
+		<div class="dbcpreloader-inner">
+			<div class="dbcpreloader-icon">
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<!-- End Preloader -->
+
+
+	<!-- Mobile Menu Modal -->
+	<div class="modal offcanvas-modal fade" id="offcanvas-modal">
+		<div class="modal-dialog offcanvas-dialog">
+			<div class="modal-content">
+				<div class="modal-header offcanvas-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<!-- offcanvas-logo-start -->
+				<div class="offcanvas-logo">
+					<div class="dbcheader__logo">
+						<a href="#"><img src="frontend/imgs/dbclogo-deepblue-orange-cart.png" alt="logo"></a>
+					</div>
+				</div>
+				<!-- offcanvas-logo-end -->
+				<!-- offcanvas-menu start -->
+				<nav id="offcanvas-menu" class="offcanvas-menu">
+					<!-- Main Menu -->
+					<ul class="nav-menu menu navigation list-none">
+						<li class="menu-item-has-children"><a href="javascript:;">New Arrivals</a>
+							<ul class="sub-menu">
+								<li><a href="#">Accessories</a></li>
+								<li><a href="#">Best selling</a></li>
+								<li><a href="#">Top 50% discounts</a></li>
+								<li><a href="#">Watches</a></li>
+								<li><a href="#">Men's Wear</a></li>
+								<li><a href="#">Women's Wear</a></li>
+								<li><a href="#">Laptops and accessiries</a></li>
+								<li><a href="#">Phones</a></li>
+								<li><a href="#">Furnitures</a></li>
+							</ul>
+						</li>
+						<li class="menu-item-has-children"><a href="javascript:;">Best Selling</a>
+							<ul class="sub-menu">
+								<li class="dbcsingle-menu">
+									<a href="#" class="title-link">Shop Furnitures</a>
+									<div class="dbcimage">
+										<img src="frontend/imgs/furniture-silhouettes_23-2147502319.avif" alt="">
+									</div>
+									<div class="inner-link">
+										<a href="#">Beds</a>
+										<a href="#">Wine Cupboards</a>
+										<a href="#">Couches</a>
+										<a href="#">Door Knobs</a>
+									</div>
+								</li>
+								<li class="dbcsingle-menu">
+									<a href="#" class="title-link">Laptops And Accessories</a>
+									<div class="dbcimage">
+										<img src="frontend/imgs/laptops-and-accessories.avif" alt="">
+									</div>
+									<div class="inner-link">
+										<a href="#">Hp Laptops</a>
+										<a href="#">Dell Laptops</a>
+										<a href="#">SSD and HDD Hard Drives</a>
+										<a href="#">Laptop Casing</a>
+									</div>
+								</li>
+								<li class="dbcsingle-menu">
+									<a href="#" class="title-link">Phones And Accessories</a>
+									<div class="dbcimage">
+										<img src="frontend/imgs/phoneandaccessories.avif" alt="">
+									</div>
+									<div class="inner-link">
+										<a href="#">Iphones</a>
+										<a href="#">Motorolla</a>
+										<a href="#">Phone covers</a>
+										<a href="#">Headsets</a>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#">Shop</a></li>
+						<li><a href="#">Services</a></li>
+						<li><a href="#">BLog</a></li>
+						<li><a href="#">About Us</a></li>
+					</ul>
+					<!-- End Main Menu -->
+				</nav>
+				<a class="dbcprivy-poli" href="#" style="text-align: center;">Privacy Policy</a>
+			</div>
+		</div>
+	</div>
+	<!-- End Mobile Menu Modal -->
+
+	<!-- Header -->
+	<header class="header dbcshop">
+		<!-- Topbar -->
+		<div class="dbctopbar">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 col-12">
+						<!-- Top Left -->
+						<div class="top-left">
+							<ul class="list-main">
+								<li>
+									<i class="ti-headphone-alt"></i>(+237) 678638521
+								</li>
+								<li>
+									<i class="ti-email"></i>victechtechnology1@gmail.com
+								</li>
+							</ul>
+						</div>
+						<!--/ End Top Left -->
+					</div>
+					<div class="col-md-4 col-12">
+						<!-- Top Right -->
+						<div class="right-content">
+							<ul class="list-main">
+								<li><i class="ti-location-pin"></i>Douala,Littoral CM</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ End Topbar -->
+		<!-- Middle header -->
+		<div class="dbcmiddle-inner">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 col-md-2 col-12">
+						<!-- Logo -->
+						<div class="dbclogo__ct">
+							<a href="index.html">
+								<img class="dbclogo" src="frontend/imgs/up-dbclogo.jpg" alt="logo"></a>
+						</div>
+						<!--/ End Logo -->
+						<!-- Mobile Search Form -->
+						<div class="dbcsearch-top">
+							<div class="top-search">
+								<a href="#0"><i class="ti-search"></i></a>
+							</div>
+							<!-- Search Form -->
+							<div class="dbcsearch-top">
+								<form action="#" class="dbcsearch-form">
+									<input type="text" name="dbcsearch" id="dbcsearch"
+										placeholder="Search for Products, Brands and More...">
+									<button type="submit" value="dbcsearch"><i class="ti-search"></i></button>
+								</form>
+							</div>
+						</div>
+						<!-- End Search Form -->
+						<div class="dbcmobile-nav"></div>
+					</div>
+					<!-- Mid section of inner header -->
+					<div class="col-lg-8 col-md-7 col-12">
+						<div class="dbcsearch-bar-top">
+							<div class="dbcsearch-bar">
+								<select name="" id="">
+									<option selected="selected">all category</option>
+									<option value="watch">watch</option>
+									<option value="mobile">mobile</option>
+									<option value="sun glasses">sun glasses</option>
+								</select>
+								<form action="">
+									<input name="search" type="search" placeholder="Search Products Here...">
+									<button class="dbcbtn">
+										<i class="ti-search"></i>
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-3 col-12">
+						<div class="right-bar">
+							<!-- Search Form -->
+							<div class="dbcsinlge-bar">
+								<a href="#" class="single-icon"><i class="fa fa-heart" aria-hidden="true"></i></a>
+							</div>
+							<div class="dbcsinlge-bar">
+								<a href="#" class="single-icon"><i class="fa fa-circle-user" aria-hidden="true"></i></a>
+							</div>
+							<div class="dbcsinlge-bar dbcshopping">
+								<a href="#" class="single-icon"><i class="ti-bag"></i> <span
+										class="total-count">2</span></a>
+								<!-- Shopping Item -->
+								<div class="dbcshopping-item">
+									<div class="dropdown-cart-header">
+										<span>2 Items</span>
+										<a href="cart.html">View Cart</a>
+									</div>
+									<ul class="dbcshopping-list">
+										<li>
+											<a href="#" class="remove" title="Remove this item"><i
+													class="fa fa-remove"></i></a>
+											<a class="cart-img" href="#"><img src="frontend/imgs/woman-ring.jpg"
+													alt="#"></a>
+											<h4><a href="#">Woman Ring</a></h4>
+											<p class="quantity">1x - <span class="amount">$99.00</span></p>
+										</li>
+										<li>
+											<a href="#" class="remove" title="Remove this item"><i
+													class="fa fa-remove"></i></a>
+											<a class="cart-img" href="#"><img src="frontend/imgs/woman-necklace.avif"
+													alt="#"></a>
+											<h4><a href="#">Woman Necklace</a></h4>
+											<p class="quantity">1x - <span class="amount">$35.00</span></p>
+										</li>
+									</ul>
+									<div class="bottom">
+										<div class="total">
+											<span>Total</span>
+											<span class="total-amount">$134.00</span>
+										</div>
+										<a href="checkout.html" class="btn animate">Checkout</a>
+									</div>
+								</div>
+								<!--/ End Shopping Item -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End middle header -->
+		<!-- Inner header -->
+		<div class="dbcheader-inner">
+			<div class="container-fluid">
+				<div class="dbccat-nav-head">
+					<div class="row">
+						<div class="col-lg-3 col-md-3">
+							<div class="dbcall-category">
+								<h3 class="dbccat-heading">
+									<i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES
+								</h3>
+								<ul class="dbcmain-category dbcshop__category">
+									<li>
+										<a href="#">New Arrivals<i class="fa fa-angle-right"></i></a>
+										<ul class="dbcsub-category">
+											<li><a href="#">Accessories</a></li>
+											<li><a href="#">Best selling</a></li>
+											<li><a href="#">Top 50% discounts</a></li>
+											<li><a href="#">Watches</a></li>
+											<li><a href="#">Men's Wear</a></li>
+											<li><a href="#">Women's Wear</a></li>
+											<li><a href="#">Laptops and accessiries</a></li>
+											<li><a href="#">Phones</a></li>
+											<li><a href="#">Furnitures</a></li>
+										</ul>
+									</li>
+									<li class="dbcmain-mega">
+										<a href="#">Best Selling<i class="fa fa-angle-right"></i></a>
+										<ul class="dbcmega-menu">
+											<li class="dbcsingle-menu">
+												<a href="#" class="title-link">Shop Furnitures</a>
+												<div class="dbcimage">
+													<img src="frontend/imgs/furniture-silhouettes_23-2147502319.avif"
+														alt="">
+												</div>
+												<div class="inner-link">
+													<a href="#">Beds</a>
+													<a href="#">Wine Cupboards</a>
+													<a href="#">Couches</a>
+													<a href="#">Door Knobs</a>
+												</div>
+											</li>
+											<li class="dbcsingle-menu">
+												<a href="#" class="title-link">Laptops And Accessories</a>
+												<div class="dbcimage">
+													<img src="frontend/imgs/laptops-and-accessories.avif" alt="">
+												</div>
+												<div class="inner-link">
+													<a href="#">Hp Laptops</a>
+													<a href="#">Dell Laptops</a>
+													<a href="#">SSD and HDD Hard Drives</a>
+													<a href="#">Laptop Casing</a>
+												</div>
+											</li>
+											<li class="dbcsingle-menu">
+												<a href="#" class="title-link">Phones And Accessories</a>
+												<div class="dbcimage">
+													<img src="frontend/imgs/phoneandaccessories.avif" alt="">
+												</div>
+												<div class="inner-link">
+													<a href="#">Iphones</a>
+													<a href="#">Motorolla</a>
+													<a href="#">Phone covers</a>
+													<a href="#">Headsets</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li><a href="#">Reading Lamps</a></li>
+									<li><a href="#">Power Banks</a></li>
+									<li><a href="#">Huffers</a></li>
+									<li><a href="#">Bluetooth Speakers</a></li>
+									<li><a href="#">Memory Cards</a></li>
+									<li><a href="#">Anti Blue light lenses</a></li>
+									<li><a href="#">Electronic Pads</a></li>
+									<li><a href="#">Projectors</a></li>
+
+								</ul>
+							</div>
+						</div>
+						<!-- navigation header column -->
+						<div class="col-lg-9 col-md-9 col-12">
+							<div class="dbcmenu-area">
+								<!-- Main Menu -->
+								<nav class="navbar navbar-expand-lg">
+									<div class="navbar-collapse">
+										<div class="dbcnav-inner">
+											<ul class="nav dbcmain-menu dbcmenu navbar-nav">
+												<li class="active"><a href="#">Home</a></li>
+												<li><a href="product.html">Product</a></li>
+												<li><a href="#">Shop <i class="ti-angle-down"></i><span
+															class="new">New</span></a>
+													<ul class="dropdown">
+														<li><a href="cart.html">Cart</a></li>
+														<li><a href="checkout.html">Checkout</a></li>
+													</ul>
+												</li>
+												<li><a href="#">Service</a></li>
+												<!-- <li><a href="#">Pages</a></li> -->
+												<li><a href="#">Blog<i class="ti-angle-down"></i></a>
+													<ul class="dropdown">
+														<li><a href="blog-single.html">Single Blog Page</a></li>
+													</ul>
+												</li>
+												<li><a href="contact.html">Contact Us</a></li>
+											</ul>
+										</div>
+									</div>
+								</nav>
+								<!-- /End Main Menu -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Inner header -->
+	</header>
+	<!-- Mobile Toggler Menu -->
+	<div class="dbcheader-inner__2">
+		<div class="container-fluid mobile-toggler-menu">
+			<div class="row align-items-center">
+				<div class="col-12">
+					<div class="header__inside">
+						<div class="dbc-header__group">
+							<div class="dbc-header__logo">
+								<a href="#">
+									<img src="frontend/imgs/dbclogo-deepblue-orange-cart.png" alt="">
+								</a>
+							</div>
+						</div>
+						<button type="button" class="offcanvas-toggler" data-bs-toggle="modal"
+							data-bs-target="#offcanvas-modal">
+							<span class="line"></span>
+							<span class="line"></span>
+							<span class="line"></span>
+						</button>
+						<div class="right-bar">
+							<div class="dbcsinlge-bar">
+								<a href="#" class="single-icon">
+									<i class="fa fa-user" aria-hidden="true"></i>
+								</a>
+							</div>
+							<div class="dbcsinlge-bar dbcshopping">
+								<a href="#" class="single-icon">
+									<i class="ti-bag"></i>
+									<span class="total-count">2</span>
+								</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dbcmobile-search__form">
+			<form action="">
+				<div class="row" id='form-container'>
+					<div class="col-2 search-icon ">
+						<i class="fa fa-search" aria-hidden="true"></i>
+					</div>
+					<div class="col-10 text-input" style="padding: 0;">
+						<input class='search-input' id='input' name='query' type="text" id="search-input2"
+							placeholder="Search for Products, Brands and More..."
+							style='width:90%;color:var(--text-default);'>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- Start Checkout -->
+	<section class="shop checkout">
+		<div class="container">
+			<!-- Breadcrumbs -->
+			<nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
+				<div class="container d-flex align-items-center">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+						<li class="breadcrumb-item"><a href="#">Checkout</a></li>
+					</ol>
+				</div>
+			</nav>
+			<!-- End Breadcrumbs -->
+			<div class="row">
+				<div class="col-lg-8 col-12">
+					<div class="checkout-form">
+						<h2>Make Your Checkout Here</h2>
+						<p>Please register in order to checkout more quickly</p>
+						<!-- Form -->
+						<form class="form" method="post" action="#">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<label>First Name<span>*</span></label>
+										<input type="text" name="name" placeholder="" required="required">
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<label>Last Name<span>*</span></label>
+										<input type="text" name="name" placeholder="" required="required">
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<label>Email Address<span>*</span></label>
+										<input type="email" name="email" placeholder="" required="required">
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<label>Phone Number<span>*</span></label>
+										<input type="number" name="number" placeholder="" required="required">
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<label>Country<span>*</span></label>
+										<select name="country_name" id="country">
+											<option value="AF">Afghanistan</option>
+											<option value="AX">Åland Islands</option>
+											<option value="AL">Albania</option>
+											<option value="DZ">Algeria</option>
+											<option value="AS">American Samoa</option>
+											<option value="AD">Andorra</option>
+											<option value="AO">Angola</option>
+											<option value="AI">Anguilla</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<label>State / Divition<span>*</span></label>
+										<select name="state-province" id="state-province">
+											<option value="divition" selected="selected">New Yourk</option>
+											<option>Los Angeles</option>
+											<option>Chicago</option>
+											<option>Houston</option>
+											<option>San Diego</option>
+											<option>Dallas</option>
+											<option>Charlotte</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<label>Address Line 1<span>*</span></label>
+										<input type="text" name="address" placeholder="" required="required">
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<label>Address Line 2<span>*</span></label>
+										<input type="text" name="address" placeholder="" required="required">
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<label>Postal Code<span>*</span></label>
+										<input type="text" name="post" placeholder="" required="required">
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<label>Company<span>*</span></label>
+										<select name="company_name" id="company">
+											<option value="company" selected="selected">Microsoft</option>
+											<option>Apple</option>
+											<option>Xaiomi</option>
+											<option>Huawer</option>
+											<option>Wpthemesgrid</option>
+											<option>Samsung</option>
+											<option>Motorola</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="form-group create-account">
+										<input id="cbox" type="checkbox">
+										<label>Create an account?</label>
+									</div>
+								</div>
+							</div>
+						</form>
+						<!--/ End Form -->
+					</div>
+				</div>
+				<div class="col-lg-4 col-12">
+					<div class="order-details">
+						<!-- Order Widget -->
+						<div class="single-widget">
+							<h2>CART TOTALS</h2>
+							<div class="content">
+								<ul>
+									<li>Sub Total<span>$330.00</span></li>
+									<li>(+) Shipping<span>$10.00</span></li>
+									<li class="last">Total<span>$340.00</span></li>
+								</ul>
+							</div>
+						</div>
+						<!--/ End Order Widget -->
+						<!-- Order Widget -->
+						<div class="single-widget">
+							<h2>Payments</h2>
+							<div class="content">
+								<div class="checkbox">
+									<label class="checkbox-inline" for="1"><input name="updates" id="1" type="checkbox">
+										Check Payments</label>
+									<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox">
+										Cash On Delivery</label>
+									<label class="checkbox-inline" for="3"><input name="news" id="3" type="checkbox">
+										PayPal</label>
+								</div>
+							</div>
+						</div>
+						<!--/ End Order Widget -->
+						<!-- Payment Method Widget -->
+						<div class="single-widget payement">
+							<div class="content">
+								<img src="frontend/imgs/payment-method.png" alt="#">
+							</div>
+						</div>
+						<!--/ End Payment Method Widget -->
+						<!-- Button Widget -->
+						<div class="single-widget get-button">
+							<div class="content">
+								<div class="button">
+									<a href="#" class="btn">proceed to checkout</a>
+								</div>
+							</div>
+						</div>
+						<!--/ End Button Widget -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--/ End Checkout -->
+
+	<!-- Start Shop Services Area  -->
+	<section class="shop-services section home">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 col-12">
+					<!-- Start Single Service -->
+					<div class="single-service">
+						<i class="ti-rocket"></i>
+						<h4>Free shiping</h4>
+						<p>Orders over $100</p>
+					</div>
+					<!-- End Single Service -->
+				</div>
+				<div class="col-lg-3 col-md-6 col-12">
+					<!-- Start Single Service -->
+					<div class="single-service">
+						<i class="ti-reload"></i>
+						<h4>Free Return</h4>
+						<p>Within 30 days returns</p>
+					</div>
+					<!-- End Single Service -->
+				</div>
+				<div class="col-lg-3 col-md-6 col-12">
+					<!-- Start Single Service -->
+					<div class="single-service">
+						<i class="ti-lock"></i>
+						<h4>Sucure Payment</h4>
+						<p>100% secure payment</p>
+					</div>
+					<!-- End Single Service -->
+				</div>
+				<div class="col-lg-3 col-md-6 col-12">
+					<!-- Start Single Service -->
+					<div class="single-service">
+						<i class="ti-tag"></i>
+						<h4>Best Peice</h4>
+						<p>Guaranteed price</p>
+					</div>
+					<!-- End Single Service -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Shop Services -->
+
+	<!-- Start Shop Newsletter  -->
+	<section class="shop-newsletter section">
+		<div class="container">
+			<div class="inner-top">
+				<div class="row">
+					<div class="col-lg-8 offset-lg-2 col-12">
+						<!-- Start Newsletter Inner -->
+						<div class="inner">
+							<h4>Newsletter</h4>
+							<p> Subscribe to our newsletter and get <span>10%</span> off your first purchase</p>
+							<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
+								<input name="EMAIL" placeholder="Your email address" required="" type="email">
+								<button class="btn">Subscribe</button>
+							</form>
+						</div>
+						<!-- End Newsletter Inner -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Shop Newsletter -->
+
+	<!-- Footer Section -->
+	<footer class="dbcfooter">
+		<!-- Footer Top -->
+		<div class="dbcfooter-top section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5 col-sm-6 col-12">
+						<!-- Single Widget -->
+						<div class="dbcsingle-footer about">
+							<div class="logo">
+								<a href="index.html"><img src="frontend/imgs/dbclogo-text-white-cart.png" alt="#"></a>
+							</div>
+							<p class="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,
+								magna
+								eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor,
+								facilisis luctus, metus.</p>
+							<p class="call">Got Question? Call us 24/7<span><a href="tel:678638521">+(237)
+										678638521</a></span></p>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+					<div class="col-lg-2 col-sm-6 col-12">
+						<!-- Single Widget -->
+						<div class="dbcsingle-footer links">
+							<h4>Information</h4>
+							<ul>
+								<li><a href="#">About Us</a></li>
+								<li><a href="#">Faq</a></li>
+								<li><a href="#">Terms & Conditions</a></li>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Help</a></li>
+							</ul>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+					<div class="col-lg-2 col-sm-6 col-12">
+						<!-- Single Widget -->
+						<div class="dbcsingle-footer links">
+							<h4>Customer Service</h4>
+							<ul>
+								<li><a href="#">Payment Methods</a></li>
+								<li><a href="#">Money-back</a></li>
+								<li><a href="#">Returns</a></li>
+								<li><a href="#">Shipping</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+							</ul>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+					<div class="col-lg-3 col-sm-6 col-12">
+						<!-- Single Widget -->
+						<div class="dbcsingle-footer social">
+							<h4>Get In Touch</h4>
+							<!-- Single Widget -->
+							<div class="contact">
+								<ul>
+									<li>Akwa, Douala, Littoral.</li>
+									<li>237 Cameroon</li>
+									<li>info@doubicomm.com</li>
+								</ul>
+							</div>
+							<!-- End Single Widget -->
+							<ul>
+								<li><a href="#"><i class="ti-facebook"></i></a></li>
+								<li><a href="#"><i class="ti-twitter"></i></a></li>
+								<li><a href="#"><i class="ti-flickr"></i></a></li>
+								<li><a href="#"><i class="ti-instagram"></i></a></li>
+							</ul>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Footer Top -->
+		<div class="copyright">
+			<div class="container">
+				<div class="inner">
+					<div class="row">
+						<div class="col-lg-6 col-12">
+							<div class="left">
+								<p>Copyright © 2024 <a href="#" target="_blank">doubiComm</a> - All Rights Reserved.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-6 col-12">
+							<div class="right">
+								<img src="frontend/imgs/payments.png" alt="#">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Scroll to Top -->
+	<a href="#" class="scrollToTop">Go Top <i class="fa fa-angle-double-right"></i></a>
+
+
+
+
+
+	<!-- Jquery -->
+	<script src="frontend/js/jquery-migrate-3.0.0.js"></script>
+	<script src="frontend/js/jquery-ui.min.js"></script>
+	<!--  What is the function of the jquery-migrate library
+  And Why do the carousel library depend on it -->
+
+
+	<!-- <script src="frontend/js/popper.min.js"></script> -->
+
+	<!-- Bootstrap Js -->
+	<script src="frontend/js/bootstrap.min.js"></script>
+	<script src="frontend/js/bootstrap-input-spinner.js"></script>
+	<script src="frontend/js/owl-carousel.min.js"></script>
+	<script src="frontend/js/jquery.elevateZoom.min.js"></script>
+	<script src="frontend/js/magnific-popup.js"></script>
+	<!-- <script src="frontend/js/bootstrap4.min.js"></script> -->
+	<!-- <script src="frontend/js/slicknav.min.js"></script> -->
+	<script src="frontend/js/aos.min.js"></script>
+	<script src="frontend/js/nicesellect.js"></script>
+	<!-- <script src="frontend/js/easing.js"></script> -->
+	<script src="frontend/js/active.js"></script>
+
+	<script>
+		(function ($) {
+			"use strict";
+
+		})(jQuery);
+	</script>
+</body>
+
+</html>
