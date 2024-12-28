@@ -46,6 +46,19 @@ Version:1.0
 			closestLi.addClass("active");
 		}
 	});
+		// Mobile Menu Toggle - Show & Hide
+		// $('.offcanvas-toggler').on('click', function (e) {
+		// 	$('body').toggleClass('dbcmenu-active');
+		// 	$(this).toggleClass('active');
+		// 	e.preventDefault();
+		// });
+	
+		// $('.mobile-menu-overlay, .btn-close').on('click', function (e) {
+		// 	$('body').removeClass('dbcmenu-active');
+		// 	$('.menu-toggler').removeClass('active');
+		// 	e.preventDefault();
+		// });
+	
 
 	/*====================================
 		02. Sticky Header JS

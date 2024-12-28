@@ -334,6 +334,23 @@ Version:1.0
 .header .dbcmobile-nav {
     display: none;
 }
+.mobile-menu-overlay {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(25, 25, 25, 0.25);
+    z-index: 1000;
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0
+}
+.dbcmenu-active .mobile-menu-overlay {
+    visibility: visible;
+    opacity: 1
+}
 
 .dbcheader-inner__2 .mobile-toggler-menu {
     padding-bottom: 10px;
@@ -3719,14 +3736,15 @@ label {
 }
 .form-control {
     height: 40px;
-    /* font-size: 1.4rem; */
+    padding: .85rem 2rem !important;
+    font-size: 1.4rem;
     line-height: 1.5;
     font-weight: 300;
     color: #777 !important;
     background-color: #fafafa;
     border: 1px solid #ebebeb !important;
-    /*border-radius: 0; */
-    /* margin-bottom: 2rem; */
+    border-radius: 0;
+    margin-bottom: 2rem;
     transition: all 0.3s;
     box-shadow: none;
 }
@@ -3736,6 +3754,9 @@ label {
     border-color: #c96;
     box-shadow: none;
     outline: none !important;
+}
+.form-control::placeholder {
+    color: #777
 }
 .select-custom select {
     -webkit-appearance: none;
@@ -4393,6 +4414,57 @@ select.form-control:not([size]):not([multiple]) {
 .input-spinner .input-group-prepend, .input-spinner .input-group-append {
     position: absolute;
     top: 0;
+}
+.input-group-round>.input-group-append>.btn {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px
+}
+.btn-outline-dark-2 {
+    color: #333;
+    background-color: transparent;
+    background-image: none;
+    border-color: #ebebeb;
+    box-shadow: none
+}
+.btn-outline-dark-2:hover,
+.btn-outline-dark-2:focus,
+.btn-outline-dark-2.focus,
+.btn-outline-dark-2:not(:disabled):not(.disabled):active,
+.btn-outline-dark-2:not(:disabled):not(.disabled).active,
+.show>.btn-outline-dark-2.dropdown-toggle {
+    color: #c96;
+    background-color: #fafafa;
+    border-color: #ebebeb;
+    box-shadow: none
+}
+.btn-outline-dark-2.disabled,
+.btn-outline-dark-2:disabled {
+    color: #333;
+    background-color: transparent
+}
+
+.btn-outline-primary-2 {
+    color: #c96;
+    background-color: transparent;
+    background-image: none;
+    border-color: #c96;
+    box-shadow: none
+}
+.btn-outline-primary-2:hover,
+.btn-outline-primary-2:focus,
+.btn-outline-primary-2.focus,
+.btn-outline-primary-2:not(:disabled):not(.disabled):active,
+.btn-outline-primary-2:not(:disabled):not(.disabled).active,
+.show>.btn-outline-primary-2.dropdown-toggle {
+    color: #fff;
+    background-color: #c96;
+    border-color: #c96;
+    box-shadow: none
+}
+.btn-outline-primary-2.disabled,
+.btn-outline-primary-2:disabled {
+    color: #c96;
+    background-color: transparent
 }
 .page-content .btn {
     display: inline-flex;
@@ -5834,250 +5906,407 @@ select.form-control:not([size]):not([multiple]) {
 /*======================================
    16. Shopping Cart CSS
 ========================================*/
-.table.shopping-summery {
-	background: #fff;
+.table {
+    margin-bottom: 3rem
 }
-.shopping-cart {
-	background: #f6f6f6;
-	padding: 15px 0;
+.table th {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: #999
 }
-.shopping-summery thead .main-hading{
-	padding:0px 50px;
+
+.table th,
+.table thead th,
+.table td {
+    border-top: none;
+    border-bottom: .1rem solid #ebebeb
 }
-.shopping-summery thead {
-	background: #F7941D;
-	color: #fff;
+
+.table th,
+.table td {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem
 }
-.shopping-summery thead tr th {
-	border: none;
-	font-weight: 600;
-	color: #fff;
-	text-align: center;
+
+.table td {
+    vertical-align: middle
 }
-.shopping-summery tbody tr {
-	border-bottom: 1px solid #F7941D;
-	margin-top: 20px;
+.table td {
+    padding-top: 3rem;
+    padding-bottom: 3rem
 }
-.shopping-summery tbody tr img {
-	border-radius: 0;
-	width: 80px;
-	height: 80px;
+
+.table.table-cart .price-col {
+    width: 120px
 }
-.shopping-summery tbody tr:last-child{
-	border:none;
+
+.table.table-cart .total-col {
+    width: 80px
 }
-.shopping-summery tbody .product-name a {
-	font-weight: 600;
-	color: #282828;
-	font-weight: 600;
-	font-size: 17px;
+
+.table.table-cart .quantity-col {
+    width: 135px
 }
-.shopping-cart .table p {
-	font-size: 14px;
-	color: #666;
+
+.product-col .product {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding-right: 2rem;
+    box-shadow: none
 }
-.shopping-summery tbody .product-name a:hover{
-	color:#F7941D;
+.product-col .product-media {
+    display: inline-block;
+    margin: 0;
+    margin-right: 2.8rem;
+    flex-shrink: 0;
+    max-width: 60px
 }
-.shopping-summery tbody .product img {
-	max-width: 70px;
-	border-radius: 100%;
-	max-height: 65px;
-	border: 1px solid #e6e6e6;
-	padding: 4px;
+
+.product-col .product-title {
+    display: inline-block;
+    color: #333;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.25;
+    margin: 0
 }
-.shopping-summery tbody .product:hover img{
-	border-color:#F7941D;
-	-webkit-transform:rotate(360deg);
-	-moz-transform:rotate(360deg);
-	transform:rotate(360deg);
+.product-col .product-title a {
+    color: inherit
 }
-.shopping-cart .border{
-	
+.product-col .product-title a:hover,
+.product-col .product-title a:focus {
+    color: #c96
 }
-.shopping-cart .table .remove-icon{
-	font-size:16px;
+.cart-product-quantity .form-control {
+    padding: .85rem 2.6rem;
+    height: 40px;
+    max-width: 100%;
+    border-color: #dadada;
+    background-color: #fff;
+    margin: 0
 }
-.shopping-cart .table td {
-	vertical-align: middle;
-	border-top: 1px solid #eee;
-	padding: 30px;
+.cart-discount .form-control {
+    margin-right: 1.1rem
 }
-.shopping-summery tbody .price {
-	text-align: center;
+.table.table-summary {
+    line-height: 1.43;
+    color: #666;
+    border: none;
+    margin-bottom: 0
 }
-.shopping-summery tbody .price span{}
-.shopping-cart tbody .qty .input-group {
-	width: 175px;
-	display: inline-block;
+.summary {
+    padding: 2.5rem 3rem 3rem;
+    border: .1rem dashed #d7d7d7;
+    background-color: #f9f9f9;
+    border-radius: .3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem
 }
-.shopping-cart .qty .button {
-	display: inline-block;
-	position: absolute;
-	top: 0;
+.summary-title {
+    font-weight: 500;
+    font-size: 1.6rem;
+    letter-spacing: 0;
+    padding-bottom: 1.7rem;
+    border-bottom: .1rem solid #cccccc;
+    margin-bottom: 2.1rem
 }
-.shopping-cart .qty .button.minus{
-	left:0;
-	border-radius:0;
-	overflow:hidden;
+.summary.summary-cart {
+    margin-bottom: 3rem
 }
-.shopping-cart .qty .button.plus {
-	right: 0;
-	border-radius:0;
-	overflow:hidden;
+.summary.summary-cart .summary-title {
+    margin-bottom: 0
 }
-.shopping-cart .qty .button .btn {
-	padding: 0;
-	width: 44px;
-	height: 47px;
-	line-height: 50px;
-	border-radius: 0px;
-	background: transparent;
-	color: #282828;
-	border: none;
-	font-size: 12px;
+.table.table-summary a {
+    color: inherit
 }
-.shopping-cart .qty .button .btn:hover{
-	color:#F7941D;
+.table.table-summary a:hover,
+.table.table-summary a:focus {
+    color: #c96
 }
-.shopping-cart .qty .input-number {
-	border: 1px solid #eceded;
-	width: 100%;
-	text-align: center;
-	height: 47px;
-	border-radius:0;
-	overflow: hidden;
-	padding: 0px 45px;
+.table.table-summary thead th {
+    border-bottom: none;
+    padding: 0 0 .3rem
 }
-.shopping-summery tbody .total-amount {
-	text-align: center;
+.table.table-summary tbody td {
+    padding: 0;
+    height: 70px;
+    border-bottom: .1rem solid #ebebeb
 }
-.shopping-summery tbody .total-amount span{}
-.shopping-summery tbody .action {
-	text-align: center;
+.table.table-summary thead th,
+.table.table-summary tbody td {
+    vertical-align: middle;
+    border-top: none
 }
-.shopping-summery tbody .action a:hover{
-	color:#F7941D;
+.table.table-summary thead th:last-child,
+.table.table-summary tbody td:last-child {
+    text-align: right;
+    min-width: 100px
 }
-.shopping-cart .total-amount{
-	margin-top:50px;
+.table.table-summary .summary-total td {
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: #c96;
+    border-bottom: none
 }
-.shopping-cart .total-amount .left{}
-.shopping-cart .total-amount .left .coupon{}
-.shopping-cart .total-amount .left .coupon form{}
-.shopping-cart .total-amount .left .coupon form input {
-	width: 220px;
-	display: inline-block;
-	height: 48px;
-	color: #333;
-	padding: 0px 20px;
-	border: none;
-	box-shadow: 0px 0px 5px #0000000a;
+
+@media screen and (max-width: 991px) {
+    .table-mobile,
+    .table-mobile tbody,
+    .table-mobile tr,
+    .table-mobile td {
+        width: 100% !important;
+        display: block !important
+    }
+    .table-mobile thead {
+        display: none !important
+    }
+    .table-mobile tr {
+        position: relative;
+        padding-top: 4.2rem;
+        padding-bottom: 4rem
+    }
+    .table-mobile .remove-col {
+        position: absolute;
+        right: 1.5rem;
+        top: .5rem;
+        padding: .5rem !important;
+        width: auto !important
+    }
+    .table-mobile tr td {
+        text-align: center;
+        padding: .1rem 3rem;
+        border-bottom: none
+    }
+    .table-mobile tr .product-col {
+        padding-bottom: .6rem
+    }
+    .table-mobile tr .action-col {
+        padding-top: 1.5rem
+    }
+    .table-mobile tr .action-col .btn,
+    .table-mobile tr .action-col .dropdown {
+        max-width: 220px;
+        margin-left: auto;
+        margin-right: auto
+    }
+    .table-mobile .product-col .product {
+        justify-content: center
+    }
+    .table-mobile .product-col .product-title {
+        text-align: left
+    }
+    .table-mobile {
+        border: .1rem solid #ebebeb
+    }
+    .table-mobile tr:not(:last-child) {
+        border-bottom: .1rem solid #ebebeb
+    }
+    .table-mobile .cart-product-quantity {
+        margin: .5rem auto
+    }
+    .product-col .product {
+        padding-right: 0
+    }
 }
-.shopping-cart .total-amount .left .coupon form .btn {
-	display: inline-block;
-	height: 48px;
-	border: navajowhite;
-	margin-left: 4px;
-	background: transparent;
-	color: #333;
-	background: #fff;
-	box-shadow: 0px 0px 5px #00000012;
+.table.table-summary .summary-shipping-estimate {
+    color: #333;
+    font-weight: 400;
+    font-size: 1.6rem
 }
-.shopping-cart .total-amount .left .coupon form .btn:hover{
-	background:#fff;
-	color:#F7941D;
+.table.table-summary .summary-shipping-estimate td {
+    height: auto;
+    padding-top: 1.4rem;
+    padding-bottom: 2.3rem
 }
-.shopping-cart .total-amount .left label{
-	font-size:22px;
-	font-weight:500;
-	color:#333;
+.table.table-summary .summary-shipping-estimate a {
+    margin-top: .6rem;
+    display: inline-block;
+    font-weight: 300;
+    color: #999;
+    font-size: 1.4rem;
+    border-bottom: 0.1rem solid #999
 }
-.shopping-cart .total-amount .left .checkbox {
-	text-align: left;
-	margin: 0;
-	margin-top: 20px;
+.table.table-summary .summary-shipping-estimate a:hover,
+.table.table-summary .summary-shipping-estimate a:focus {
+    color: #c96;
+    border-bottom-color: #c96
 }
-.shopping-cart .total-amount .left .checkbox label {
-	font-size: 15px;
-	font-weight: 400;
-	color: #333;
-	position: relative;
-	padding-left: 30px;
+.summary-cart .table.table-summary thead th:last-child,
+.summary-cart .table.table-summary tbody td:last-child {
+    min-width: 0
 }
-.shopping-cart .total-amount .left .checkbox label:hover{
-	cursor:pointer;
+.custom-control {
+    position: relative;
+    padding-left: 2.6rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem
 }
-.shopping-cart .total-amount .left .checkbox label input{
-	display:none;
+.custom-control-label {
+    position: static;
+    margin-bottom: 0;
+    margin-top: .1rem;
+    font-size: 1.4rem;
+    padding-left: 2.6rem;
+    margin-left: -2.6rem
 }
-.shopping-cart .total-amount .left .checkbox label::before {
-	position: absolute;
-	content: "";
-	left: 0;
-	top: 4px;
-	width: 16px;
-	height: 16px;
-	border: 1px solid #555555;
-	border-radius: 0px;
+.custom-control-label::before {
+    left: 0;
+    top: .6rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: #f9f9f9;
+    border: 1px solid #dadada;
+    box-shadow: none !important
 }
-.shopping-cart .total-amount .left .checkbox label::after {
-	position: absolute;
-	content: "\f00c";
-	font-family: "Fontawesome";
-	left: 0;
-	top: 0;
-	width: 22px;
-	height: 22px;
-	line-height: 24px;
-	left: 3px;
-	top: 0px;
-	opacity: 0;
-	visibility: hidden;
-	transform: scale(0);
-	-webkit-transition: all 0.4s ease;
-	-moz-transition: all 0.4s ease;
-	transition: all 0.4s ease;
-	display: block;
-	font-size: 11px;
+.custom-control-input:focus:not(:checked)~.custom-control-label::before {
+    border-color: #dadada
 }
-.shopping-cart .total-amount .left .checkbox label.checked::after{
-	opacity:1;
-	visibility:visible;
-	transform:scale(1);
+
+.custom-control-label::after {
+    left: 0;
+    top: .6rem;
+    width: 1.6rem;
+    height: 1.6rem
 }
-.shopping-cart .total-amount .right {
-	padding-left: 100px;
+.custom-control.custom-radio .custom-control-label::before {
+    top: .4rem;
+    background-color: #f9f9f9;
+    border-color: #dadada;
+    border-radius: 50%
 }
-.shopping-cart .total-amount .right ul{
-	
+.custom-control.custom-radio .custom-control-input:checked~.custom-control-label::before {
+    border-color: #c96;
+    background-color: #fff
 }
-.shopping-cart .total-amount .right ul li {
-	font-size: 15px;
-	font-weight: 400;
-	color: #333;
-	margin-bottom: 12px;
+.custom-control.custom-radio .custom-control-label::after {
+    border-radius: 50%;
+    width: .6rem;
+    height: .6rem;
+    top: .9rem;
+    left: .5rem
 }
-.shopping-cart .total-amount .right ul li.last {
-	padding-top: 12px;
-	border-top: 1px solid #c8c8c8;
-	color: #333;
-	font-size: 15px;
-	font-weight: 400;
+.custom-control.custom-radio .custom-control-input:checked~.custom-control-label::after {
+    background-image: none !important;
+    z-index: 2;
+    background-color: #c96
 }
-.shopping-cart .total-amount .right ul li span{
-	display:inline-block;
-	float:right;
+.table.table-summary .custom-control {
+    margin: 0
 }
-.shopping-cart .total-amount .right .button5 .btn {
-	text-align: center;
-	border-radius: 0;
-	width: 100%;
-	margin-top: 10px;
-	height: 46px;
-	line-height: 18px;
-	font-size: 13px;
-	color: #fff;
+@media screen and (max-width: 767px) {
+    .table-mobile .product-col .product-media {
+        margin-right: 1.5rem
+    }
+}
+@media screen and (max-width: 575px) {
+    .cart-bottom {
+        flex-direction: column;
+        margin-bottom: 4rem
+    }
+    .cart-bottom .cart-discount .btn {
+        margin-top: 0
+    }
+    .cart-bottom .btn {
+        margin-left: 0 !important;
+        margin-top: 1rem
+    }
+}
+@media screen and (min-width: 992px) {
+    .cart .col-lg-3 {
+        -ms-flex: 0 0 30%;
+        flex: 0 0 30%;
+        max-width: 30%
+    }
+    .cart .col-lg-9 {
+        -ms-flex: 0 70%;
+        flex: 0 0 70%;
+        max-width: 70%
+    }
+}
+
+.table .total-col {
+    color: #c96;
+    font-weight: 400;
+    font-size: 1.6rem
+}
+.table.table-cart .price-col {
+    width: 120px
+}
+.table.table-cart .total-col {
+    width: 80px
+}
+.cart-product-quantity {
+    width: 100px
+}
+.cart-product-quantity .form-control {
+    padding: .85rem 2.6rem;
+    height: 40px;
+    max-width: 100%;
+    border-color: #dadada;
+    background-color: #fff;
+    margin: 0
+}
+.cart-bottom {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5rem
+}
+
+.cart-bottom .btn {
+    margin-left: auto;
+    min-width: 152px
+}
+.cart-discount {
+    flex: 0 0 50%;
+    max-width: 326px
+}
+
+.cart-discount .form-control {
+    margin-right: 1.1rem
+}
+.cart-bottom .btn {
+    margin-left: auto;
+    min-width: 152px;
+}
+.cart-discount .btn {
+    min-width: 40px;
+    padding-left: 0;
+    padding-right: 0
+}
+.table.table-summary thead th,
+.table.table-summary .summary-subtotal td {
+    color: #333;
+    font-weight: 400;
+    font-size: 1.6rem
+}
+.table.table-summary .summary-shipping {
+    color: #333;
+    font-weight: 400;
+    font-size: 1.6rem
+}
+.table.table-summary .summary-shipping td {
+    padding-top: 2rem;
+    padding-bottom: 1.3rem;
+    height: auto;
+    border-bottom: none
+}
+.table.table-summary .summary-shipping-row {
+    color: #333
+}
+
+.table.table-summary .summary-shipping-row label {
+    color: inherit
+}
+
+.table.table-summary .summary-shipping-row td {
+    height: auto;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-bottom: none
 }
 /*======================================
    End Shopping Cart CSS
